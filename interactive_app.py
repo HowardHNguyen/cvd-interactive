@@ -1,7 +1,6 @@
 # interactive_app.py
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 # ------------------------------------------------------------------
 # Train model at startup (cached, runs once)
@@ -43,7 +42,7 @@ model = train_and_get_model()
 # ------------------------------------------------------------------
 # Page Config
 # ------------------------------------------------------------------
-st.set_page_config(page_title="CVD Interactive Risk", layout="wide")
+st.set_page_config(page_title="CVD Risk Predictor - Interactive", layout="wide")
 
 # ------------------------------------------------------------------
 # Sidebar: Input Controls
@@ -88,7 +87,7 @@ def get_risk_color(val):
     else: return "#9d1c1f"          # Deep Red
 
 # ------------------------------------------------------------------
-# Main Panel: Real-Time Prediction
+# Main Panel: Right Column Layout
 # ------------------------------------------------------------------
 col1, col2 = st.columns([1, 1])
 
@@ -106,7 +105,23 @@ with col1:
     st.markdown(summary)
 
 with col2:
-    st.markdown("### 10-Year CVD Risk")
+    # 1. Collapsible "About This App" at the top
+    with st.expander("About This App", expanded=False):
+        st.markdown("""
+        ### Interactive CVD Risk Predictor  
+        **Real-time 10-year risk** of **heart attack or stroke** using **clinical notes + vitals**.
+
+        - **No data leakage** — Zero use of "MI", "CAD", "stroke" in training  
+        - **AUC ≈ 0.84** — Realistic and deployable  
+        - **WHO/ISH 2007** risk levels  
+        - **TF-IDF + vitals fusion** → learns from language + biology  
+        - **Built for doctors, clinics, and patients**
+
+        > **This is hospital-grade AI.**
+        """)
+
+    # 2. App Title (below the expander)
+    st.markdown("<h2 style='text-align: center; margin-top: -10px;'>CVD 10-Year Risk</h2>", unsafe_allow_html=True)
     
     # Build input DataFrame
     input_data = pd.DataFrame([{
@@ -130,12 +145,12 @@ with col2:
 
         # Big risk number
         st.markdown(
-            f"<h1 style='text-align: center; color: {color};'>"
+            f"<h1 style='text-align: center; color: {color}; margin-top: 20px;'>"
             f"{risk_pct:.1f}%</h1>",
             unsafe_allow_html=True
         )
         st.markdown(
-            f"<p style='text-align: center; font-size: 18px; font-weight: bold;'>"
+            f"<p style='text-align: center; font-size: 18px; font-weight: bold; margin-top: -10px;'>"
             f"{interpretation}</p>",
             unsafe_allow_html=True
         )
@@ -155,7 +170,7 @@ with col2:
 st.markdown("---")
 st.markdown(
     "<p style='text-align: center; color: gray;'>"
-    "Powered by TF-IDF + Logistic Regression | No data leakage | AUC ≈ 0.84"
+    "By Howard Nguyen, PhD, 2025. Developed with TF-IDF + Logistic Regression | No data leakage | AUC ≈ 0.84"
     "</p>",
     unsafe_allow_html=True
 )
