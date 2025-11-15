@@ -7,7 +7,7 @@ import pandas as pd
 # ------------------------------------------------------------------
 @st.cache_resource
 def train_and_get_model():
-    st.info("Training model... (first time only, ~3 sec)")
+    # st.info("Training model... (first time only, ~3 sec)")
 
     df = pd.read_csv("data_cvd_perfect.csv")
 
@@ -34,7 +34,7 @@ def train_and_get_model():
     y = df['cvd']
     model.fit(X, y)
 
-    st.success("Model ready! AUC ≈ 0.84")
+    # st.success("Model ready! AUC ≈ 0.84")
     return model
 
 model = train_and_get_model()
