@@ -1,0 +1,224 @@
+note,age,sys_bp,dia_bp,cholesterol,glucose,bmi,smoke,family_hx,cvd
+"Feels chest pressure after meals, no medications, never smoked",68,151,88,154,176,33.7,0,0,1
+"Exercises 3 times per week, smokes cigarettes",53,102,81,192,71,32.6,1,0,0
+"Tires easily during exercise, no medications, smokes cigarettes",73,148,86,198,111,19.4,1,0,1
+"No chest pain or shortness of breath, no medications, smokes cigarettes, family history of heart problems",32,150,66,160,142,19.8,1,1,0
+"No chest pain or shortness of breath, no medications, never smoked",57,159,66,147,116,21.9,0,0,0
+"Tires easily during exercise, on cholesterol medication, smokes cigarettes",58,162,77,183,103,26.2,1,0,1
+"Active and healthy, no medications, smokes cigarettes",69,152,83,263,178,21.2,1,0,0
+"No chest pain or shortness of breath, takes diabetes medicine, never smoked, family history of heart problems",40,107,94,172,74,36.6,0,1,0
+"No fatigue or symptoms, never smoked",52,161,83,176,168,30.0,0,0,0
+"Active and healthy, takes blood pressure pill, never smoked",34,113,98,166,78,32.4,0,0,0
+"Exercises 3 times per week, takes blood pressure pill, never smoked",61,103,89,168,105,36.9,0,0,0
+"Feels chest pressure after meals, smokes cigarettes",35,127,87,247,113,26.6,1,0,1
+"Feels energetic, walks daily, takes diabetes medicine, never smoked",30,126,72,142,172,21.7,0,0,0
+"Occasional lightheadedness, takes diabetes medicine, never smoked, family history of heart problems",61,151,71,178,71,32.4,0,1,1
+"Feels energetic, walks daily, takes blood pressure pill, never smoked",66,100,78,265,71,28.9,0,0,0
+"No chest pain or shortness of breath, takes blood pressure pill, never smoked",67,123,64,255,167,30.9,0,0,0
+"No chest pain or shortness of breath, no medications, never smoked",32,119,95,229,136,34.3,0,0,0
+"Feels energetic, walks daily, never smoked, family history of heart problems",30,110,87,181,168,23.0,0,1,0
+"Active and healthy, smokes cigarettes, family history of heart problems",41,168,96,148,174,25.3,1,1,0
+"Feels energetic, walks daily, on cholesterol medication, never smoked, family history of heart problems",40,135,97,243,153,29.8,0,1,0
+"Exercises 3 times per week, no medications, never smoked",64,160,95,207,102,28.1,0,0,0
+"Exercises 3 times per week, smokes cigarettes",41,158,81,258,91,23.3,1,0,0
+"No fatigue or symptoms, never smoked",59,127,92,200,117,24.0,0,0,0
+"Feels chest pressure after meals, smokes cigarettes, family history of heart problems",35,136,83,232,115,37.3,1,1,1
+"No chest pain or shortness of breath, on cholesterol medication, never smoked",32,117,84,193,127,36.6,0,0,0
+"Feels energetic, walks daily, never smoked",31,116,99,276,112,32.3,0,0,0
+"Feels energetic, walks daily, no medications, never smoked",36,156,95,159,134,19.9,0,0,0
+"Feels energetic, walks daily, takes diabetes medicine, smokes cigarettes, family history of heart problems",52,162,81,190,94,21.5,1,1,0
+"Feels energetic, walks daily, takes diabetes medicine, smokes cigarettes",72,159,96,147,122,23.8,1,0,0
+"Gets short of breath walking uphill, takes blood pressure pill, smokes cigarettes",69,151,75,152,175,24.8,1,0,1
+"Gets short of breath walking uphill, never smoked",52,108,71,268,127,36.3,0,0,1
+"Feels energetic, walks daily, no medications, never smoked",30,115,98,208,91,32.7,0,0,0
+"Occasional lightheadedness, never smoked",34,146,89,224,108,25.3,0,0,1
+"No fatigue or symptoms, never smoked",60,109,78,235,70,29.0,0,0,0
+"Occasional lightheadedness, never smoked, family history of heart problems",61,123,71,263,102,27.4,0,1,1
+"Exercises 3 times per week, on cholesterol medication, never smoked",73,128,72,151,164,25.9,0,0,0
+"No chest pain or shortness of breath, no medications, never smoked",55,133,66,197,178,36.8,0,0,0
+"Feels energetic, walks daily, never smoked, family history of heart problems",64,148,94,175,151,23.4,0,1,0
+"Gets short of breath walking uphill, never smoked",52,129,76,252,131,28.2,0,0,1
+"Gets short of breath walking uphill, never smoked",48,108,66,167,147,31.7,0,0,1
+"No chest pain or shortness of breath, never smoked",50,152,82,196,108,20.3,0,0,0
+"Gets short of breath walking uphill, takes diabetes medicine, smokes cigarettes, family history of heart problems",72,117,71,148,143,34.8,1,1,1
+"No fatigue or symptoms, never smoked, family history of heart problems",31,104,88,222,77,25.8,0,1,0
+"Feels energetic, walks daily, on cholesterol medication, never smoked",35,130,78,247,123,32.2,0,0,0
+"Has leg swelling at night, on cholesterol medication, smokes cigarettes",49,160,98,140,72,29.9,1,0,1
+"Tires easily during exercise, never smoked, family history of heart problems",73,144,91,200,116,35.9,0,1,1
+"Occasional lightheadedness, smokes cigarettes",47,146,73,140,123,29.9,1,0,1
+"Feels energetic, walks daily, no medications, never smoked",41,123,87,256,77,21.8,0,0,0
+"No chest pain or shortness of breath, smokes cigarettes",56,162,76,185,104,34.5,1,0,0
+"No chest pain or shortness of breath, smokes cigarettes",79,104,92,257,134,27.9,1,0,0
+"No chest pain or shortness of breath, never smoked",78,132,93,244,168,21.1,0,0,0
+"Feels energetic, walks daily, no medications, never smoked",32,152,82,192,106,33.3,0,0,0
+"No chest pain or shortness of breath, never smoked",30,131,93,231,164,20.7,0,0,0
+"Exercises 3 times per week, on cholesterol medication, never smoked",73,104,89,196,86,21.1,0,0,0
+"No chest pain or shortness of breath, never smoked",63,137,93,221,99,29.3,0,0,0
+"Feels chest pressure after meals, smokes cigarettes",59,150,76,272,98,21.4,1,0,1
+"Feels energetic, walks daily, takes diabetes medicine, never smoked",31,142,70,254,92,21.0,0,0,0
+"Gets short of breath walking uphill, takes blood pressure pill, never smoked",61,166,86,232,101,21.9,0,0,1
+"Feels energetic, walks daily, on cholesterol medication, never smoked",35,100,64,151,159,35.9,0,0,0
+"Tires easily during exercise, never smoked, family history of heart problems",76,155,89,246,132,25.9,0,1,1
+"Gets short of breath walking uphill, takes diabetes medicine, never smoked",76,155,81,153,159,33.3,0,0,1
+"Tires easily during exercise, never smoked",76,122,77,177,168,26.2,0,0,1
+"Exercises 3 times per week, never smoked",51,143,84,152,153,27.7,0,0,0
+"Exercises 3 times per week, takes blood pressure pill, never smoked",76,107,99,252,177,21.0,0,0,0
+"Has leg swelling at night, takes blood pressure pill, never smoked, family history of heart problems",35,132,81,160,139,25.6,0,1,1
+"Active and healthy, no medications, never smoked, family history of heart problems",32,130,99,175,93,20.7,0,1,0
+"Feels chest pressure after meals, takes blood pressure pill, never smoked",67,150,61,218,144,29.6,0,0,1
+"No chest pain or shortness of breath, on cholesterol medication, never smoked",49,111,60,229,83,24.1,0,0,0
+"Gets short of breath walking uphill, takes diabetes medicine, never smoked",39,104,82,277,113,22.4,0,0,1
+"Tires easily during exercise, smokes cigarettes, family history of heart problems",53,137,94,233,164,36.6,1,1,1
+"Feels energetic, walks daily, takes blood pressure pill, smokes cigarettes",41,134,60,179,133,29.7,1,0,0
+"Has leg swelling at night, on cholesterol medication, never smoked, family history of heart problems",66,104,78,262,147,28.7,0,1,1
+"Feels chest pressure after meals, no medications, never smoked",61,150,97,236,92,27.1,0,0,1
+"Exercises 3 times per week, takes diabetes medicine, never smoked",68,150,65,273,136,30.7,0,0,0
+"Tires easily during exercise, never smoked",56,135,88,177,126,24.6,0,0,1
+"No chest pain or shortness of breath, takes blood pressure pill, never smoked",39,137,72,186,169,27.4,0,0,0
+"Occasional lightheadedness, no medications, never smoked",31,126,90,254,105,29.1,0,0,1
+"Feels energetic, walks daily, never smoked",52,146,85,185,176,21.5,0,0,0
+"No chest pain or shortness of breath, never smoked",41,167,64,259,106,32.3,0,0,0
+"Has leg swelling at night, on cholesterol medication, never smoked",69,140,81,150,92,20.9,0,0,1
+"Feels chest pressure after meals, smokes cigarettes",69,114,80,192,78,22.5,1,0,1
+"Tires easily during exercise, takes blood pressure pill, never smoked, family history of heart problems",67,101,66,230,86,29.9,0,1,1
+"No fatigue or symptoms, on cholesterol medication, never smoked",53,132,88,202,176,30.8,0,0,0
+"Active and healthy, takes blood pressure pill, never smoked",51,162,99,188,140,30.1,0,0,0
+"No chest pain or shortness of breath, on cholesterol medication, never smoked",78,144,88,169,85,29.5,0,0,0
+"Tires easily during exercise, takes diabetes medicine, smokes cigarettes",59,137,63,268,77,35.3,1,0,1
+"Feels energetic, walks daily, takes diabetes medicine, never smoked",57,131,66,232,77,19.0,0,0,0
+"Active and healthy, takes blood pressure pill, never smoked",66,166,92,231,77,20.4,0,0,0
+"Feels energetic, walks daily, never smoked",50,113,90,194,117,20.2,0,0,0
+"Exercises 3 times per week, takes blood pressure pill, never smoked",58,159,77,141,70,34.4,0,0,0
+"Feels energetic, walks daily, takes diabetes medicine, never smoked, family history of heart problems",66,137,89,276,167,35.3,0,1,0
+"No fatigue or symptoms, takes blood pressure pill, never smoked",75,113,68,179,135,30.9,0,0,0
+"Feels chest pressure after meals, no medications, smokes cigarettes",63,136,70,209,87,28.8,1,0,1
+"Occasional lightheadedness, no medications, never smoked",52,126,90,273,160,30.1,0,0,1
+"Has leg swelling at night, no medications, never smoked",75,163,61,193,176,22.1,0,0,1
+"Gets short of breath walking uphill, takes diabetes medicine, smokes cigarettes",78,158,98,193,167,26.2,1,0,1
+"No chest pain or shortness of breath, on cholesterol medication, never smoked",64,161,93,212,142,25.4,0,0,0
+"Active and healthy, never smoked, family history of heart problems",66,143,89,241,167,20.5,0,1,0
+"Exercises 3 times per week, smokes cigarettes, family history of heart problems",78,146,71,201,149,35.5,1,1,0
+"No fatigue or symptoms, on cholesterol medication, never smoked",54,111,74,198,95,19.5,0,0,0
+"No chest pain or shortness of breath, smokes cigarettes, family history of heart problems",36,113,74,256,76,24.3,1,1,0
+"Tires easily during exercise, takes diabetes medicine, never smoked",68,117,98,156,83,30.1,0,0,1
+"Exercises 3 times per week, takes diabetes medicine, never smoked",52,138,74,259,73,33.9,0,0,0
+"Gets short of breath walking uphill, on cholesterol medication, smokes cigarettes",64,141,93,152,82,26.0,1,0,1
+"Feels energetic, walks daily, no medications, never smoked",73,156,75,260,79,20.3,0,0,0
+"Feels chest pressure after meals, takes diabetes medicine, smokes cigarettes",59,167,77,176,94,23.9,1,0,1
+"No fatigue or symptoms, smokes cigarettes",66,160,96,263,139,37.7,1,0,0
+"Feels chest pressure after meals, on cholesterol medication, smokes cigarettes",33,158,67,232,132,23.0,1,0,1
+"Feels energetic, walks daily, on cholesterol medication, smokes cigarettes, family history of heart problems",32,105,64,144,123,37.4,1,1,0
+"Has leg swelling at night, never smoked",47,161,76,142,101,27.5,0,0,1
+"Feels chest pressure after meals, never smoked, family history of heart problems",40,155,62,262,161,27.8,0,1,1
+"No fatigue or symptoms, no medications, never smoked",40,158,93,263,148,18.6,0,0,0
+"Active and healthy, never smoked",34,139,91,201,162,36.2,0,0,0
+"No fatigue or symptoms, takes diabetes medicine, never smoked",53,118,75,231,166,21.6,0,0,0
+"Has leg swelling at night, takes diabetes medicine, never smoked, family history of heart problems",67,159,66,272,176,37.2,0,1,1
+"Exercises 3 times per week, on cholesterol medication, never smoked",60,101,73,216,162,23.5,0,0,0
+"Feels energetic, walks daily, never smoked",53,134,65,213,174,37.3,0,0,0
+"Feels energetic, walks daily, never smoked",61,167,86,156,81,19.8,0,0,0
+"Active and healthy, never smoked",76,128,71,264,145,19.0,0,0,0
+"Exercises 3 times per week, on cholesterol medication, never smoked",55,145,93,168,73,26.8,0,0,0
+"No chest pain or shortness of breath, never smoked",76,121,70,166,136,37.0,0,0,0
+"Has leg swelling at night, smokes cigarettes",35,118,64,270,70,24.8,1,0,1
+"No chest pain or shortness of breath, takes diabetes medicine, never smoked",47,114,75,166,141,21.6,0,0,0
+"Exercises 3 times per week, takes blood pressure pill, never smoked",32,163,83,199,72,22.1,0,0,0
+"Gets short of breath walking uphill, on cholesterol medication, never smoked",67,147,81,256,71,34.1,0,0,1
+"Exercises 3 times per week, no medications, smokes cigarettes, family history of heart problems",76,137,91,150,114,33.3,1,1,0
+"Feels chest pressure after meals, takes blood pressure pill, smokes cigarettes",75,131,74,219,123,30.6,1,0,1
+"Active and healthy, takes diabetes medicine, never smoked",70,129,92,216,95,26.2,0,0,0
+"Feels energetic, walks daily, never smoked",73,148,99,200,136,36.0,0,0,0
+"No chest pain or shortness of breath, smokes cigarettes",37,149,87,201,153,25.1,1,0,0
+"No chest pain or shortness of breath, never smoked",55,102,73,151,156,31.2,0,0,0
+"No fatigue or symptoms, smokes cigarettes",58,152,91,190,113,29.3,1,0,0
+"No chest pain or shortness of breath, no medications, smokes cigarettes",39,134,88,236,76,27.5,1,0,0
+"Exercises 3 times per week, no medications, never smoked",49,159,83,189,118,28.5,0,0,0
+"No chest pain or shortness of breath, smokes cigarettes",35,138,71,270,178,27.6,1,0,0
+"Has leg swelling at night, no medications, smokes cigarettes",71,143,73,217,71,22.0,1,0,1
+"No chest pain or shortness of breath, smokes cigarettes",68,101,98,209,86,26.1,1,0,0
+"No chest pain or shortness of breath, never smoked",65,144,82,186,100,23.1,0,0,0
+"Exercises 3 times per week, no medications, never smoked",30,104,79,147,112,37.0,0,0,0
+"Feels energetic, walks daily, on cholesterol medication, never smoked",66,148,87,250,148,29.4,0,0,0
+"No chest pain or shortness of breath, never smoked",58,100,94,198,138,20.5,0,0,0
+"Feels energetic, walks daily, no medications, never smoked",63,149,88,178,164,23.5,0,0,0
+"Feels energetic, walks daily, never smoked",45,149,67,224,70,32.8,0,0,0
+"Occasional lightheadedness, smokes cigarettes",55,142,69,253,151,30.5,1,0,1
+"Feels energetic, walks daily, never smoked",62,100,78,170,149,34.6,0,0,0
+"Active and healthy, never smoked",38,132,84,152,142,20.3,0,0,0
+"Feels chest pressure after meals, takes diabetes medicine, never smoked, family history of heart problems",48,169,93,221,82,34.1,0,1,1
+"Feels energetic, walks daily, never smoked",30,114,80,199,162,27.2,0,0,0
+"Feels chest pressure after meals, on cholesterol medication, never smoked",75,165,68,142,154,35.3,0,0,1
+"No fatigue or symptoms, takes diabetes medicine, smokes cigarettes, family history of heart problems",77,136,74,183,169,30.4,1,1,0
+"Gets short of breath walking uphill, no medications, never smoked, family history of heart problems",72,146,74,164,105,36.6,0,1,1
+"Feels chest pressure after meals, takes diabetes medicine, never smoked",75,126,88,174,77,24.6,0,0,1
+"No chest pain or shortness of breath, never smoked",36,138,72,210,132,20.6,0,0,0
+"Tires easily during exercise, takes blood pressure pill, smokes cigarettes",30,143,72,258,91,34.5,1,0,1
+"Exercises 3 times per week, never smoked",71,123,75,188,95,23.5,0,0,0
+"Feels energetic, walks daily, takes diabetes medicine, smokes cigarettes",48,135,69,208,116,23.1,1,0,0
+"Feels energetic, walks daily, never smoked",57,131,70,277,142,26.1,0,0,0
+"Active and healthy, takes blood pressure pill, never smoked",32,141,98,163,129,34.5,0,0,0
+"Active and healthy, never smoked",62,135,62,212,77,25.7,0,0,0
+"Feels energetic, walks daily, no medications, never smoked",73,126,91,147,171,30.1,0,0,0
+"Active and healthy, on cholesterol medication, never smoked, family history of heart problems",31,134,93,169,77,29.8,0,1,0
+"Feels energetic, walks daily, smokes cigarettes",59,154,75,151,86,24.4,1,0,0
+"No chest pain or shortness of breath, takes blood pressure pill, smokes cigarettes, family history of heart problems",34,164,89,223,139,23.5,1,1,0
+"No chest pain or shortness of breath, takes diabetes medicine, never smoked, family history of heart problems",43,135,92,253,178,25.5,0,1,0
+"Feels energetic, walks daily, never smoked, family history of heart problems",55,167,77,194,75,36.4,0,1,0
+"No chest pain or shortness of breath, takes blood pressure pill, smokes cigarettes, family history of heart problems",71,137,77,174,99,35.6,1,1,0
+"Feels energetic, walks daily, smokes cigarettes",64,165,86,269,104,25.2,1,0,0
+"Gets short of breath walking uphill, no medications, never smoked",65,113,60,249,149,33.4,0,0,1
+"No fatigue or symptoms, smokes cigarettes",50,167,84,218,137,20.1,1,0,0
+"Has leg swelling at night, on cholesterol medication, never smoked",58,159,65,232,112,30.6,0,0,1
+"Feels chest pressure after meals, no medications, never smoked",40,149,90,195,148,37.7,0,0,1
+"No chest pain or shortness of breath, takes diabetes medicine, never smoked",45,103,63,242,109,34.4,0,0,0
+"Feels energetic, walks daily, takes diabetes medicine, smokes cigarettes",66,162,94,146,96,26.6,1,0,0
+"Feels energetic, walks daily, no medications, never smoked, family history of heart problems",50,120,69,197,108,30.6,0,1,0
+"Tires easily during exercise, never smoked, family history of heart problems",65,159,70,191,124,21.4,0,1,1
+"No fatigue or symptoms, never smoked",58,151,88,181,90,37.1,0,0,0
+"Feels chest pressure after meals, takes blood pressure pill, smokes cigarettes, family history of heart problems",77,128,92,149,127,23.4,1,1,1
+"Feels energetic, walks daily, takes diabetes medicine, smokes cigarettes",44,116,82,227,114,21.4,1,0,0
+"No fatigue or symptoms, never smoked",30,150,83,156,74,28.4,0,0,0
+"Feels chest pressure after meals, never smoked",57,150,64,144,163,34.7,0,0,1
+"Feels energetic, walks daily, smokes cigarettes",37,124,68,188,105,30.5,1,0,0
+"Exercises 3 times per week, on cholesterol medication, never smoked, family history of heart problems",50,135,71,230,173,20.7,0,1,0
+"Feels energetic, walks daily, on cholesterol medication, never smoked, family history of heart problems",44,116,99,198,147,27.1,0,1,0
+"Tires easily during exercise, on cholesterol medication, smokes cigarettes",78,120,94,261,101,24.7,1,0,1
+"No fatigue or symptoms, on cholesterol medication, never smoked",37,145,99,274,92,31.3,0,0,0
+"No chest pain or shortness of breath, no medications, never smoked, family history of heart problems",31,128,80,166,119,22.7,0,1,0
+"Feels energetic, walks daily, no medications, never smoked, family history of heart problems",32,162,78,162,98,20.3,0,1,0
+"Tires easily during exercise, smokes cigarettes",30,104,62,271,173,22.3,1,0,1
+"Active and healthy, takes blood pressure pill, never smoked, family history of heart problems",56,126,61,251,82,29.0,0,1,0
+"No chest pain or shortness of breath, no medications, never smoked, family history of heart problems",63,152,79,214,85,21.4,0,1,0
+"No chest pain or shortness of breath, never smoked",39,123,94,176,171,26.5,0,0,0
+"Exercises 3 times per week, never smoked",49,116,66,143,162,31.0,0,0,0
+"Active and healthy, never smoked",63,129,77,199,88,28.2,0,0,0
+"Has leg swelling at night, never smoked",60,163,78,233,124,32.8,0,0,1
+"No chest pain or shortness of breath, no medications, never smoked",74,132,76,143,89,33.8,0,0,0
+"Feels chest pressure after meals, takes blood pressure pill, never smoked, family history of heart problems",34,160,69,189,72,19.0,0,1,1
+"No chest pain or shortness of breath, on cholesterol medication, smokes cigarettes",48,141,94,185,95,35.5,1,0,0
+"Tires easily during exercise, takes diabetes medicine, smokes cigarettes",55,103,98,178,104,27.0,1,0,1
+"Feels energetic, walks daily, never smoked",49,123,84,175,154,19.8,0,0,0
+"Gets short of breath walking uphill, never smoked",39,115,90,245,158,33.6,0,0,1
+"Exercises 3 times per week, never smoked",50,167,92,146,139,36.0,0,0,0
+"Tires easily during exercise, takes blood pressure pill, never smoked",71,125,73,196,106,37.6,0,0,1
+"No fatigue or symptoms, no medications, never smoked",50,111,92,256,137,26.7,0,0,0
+"Feels energetic, walks daily, never smoked",72,140,98,225,118,29.1,0,0,0
+"Has leg swelling at night, takes diabetes medicine, never smoked",77,156,61,213,167,35.3,0,0,1
+"Feels energetic, walks daily, never smoked",39,163,91,274,90,21.7,0,0,0
+"Feels energetic, walks daily, no medications, smokes cigarettes",51,113,86,264,174,29.4,1,0,0
+"No fatigue or symptoms, on cholesterol medication, smokes cigarettes",62,141,94,145,108,31.3,1,0,0
+"Active and healthy, no medications, never smoked",37,123,87,180,105,23.9,0,0,0
+"Feels chest pressure after meals, takes diabetes medicine, never smoked, family history of heart problems",49,169,71,269,76,30.5,0,1,1
+"No chest pain or shortness of breath, never smoked, family history of heart problems",37,131,96,143,163,30.5,0,1,0
+"Gets short of breath walking uphill, takes blood pressure pill, smokes cigarettes",74,120,89,152,103,21.7,1,0,1
+"Feels energetic, walks daily, never smoked",33,124,79,265,74,37.5,0,0,0
+"Feels energetic, walks daily, no medications, never smoked",40,165,68,270,145,25.0,0,0,0
+"No chest pain or shortness of breath, never smoked",63,140,77,197,144,31.2,0,0,0
+"Feels energetic, walks daily, never smoked",64,132,79,264,85,20.6,0,0,0
+"Feels chest pressure after meals, never smoked",30,162,62,143,127,28.5,0,0,1
+"Feels energetic, walks daily, on cholesterol medication, smokes cigarettes",43,116,98,276,168,19.7,1,0,0
+"Gets short of breath walking uphill, on cholesterol medication, never smoked, family history of heart problems",75,137,73,239,141,21.0,0,1,1
+"Exercises 3 times per week, no medications, never smoked, family history of heart problems",55,121,78,249,120,34.6,0,1,0
+"Tires easily during exercise, on cholesterol medication, never smoked",48,146,73,259,107,20.8,0,0,1
+"No chest pain or shortness of breath, no medications, never smoked, family history of heart problems",40,152,94,217,163,30.2,0,1,0
+"Feels energetic, walks daily, no medications, smokes cigarettes",45,161,89,151,104,23.7,1,0,0
