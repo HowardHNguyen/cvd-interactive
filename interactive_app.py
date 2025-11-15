@@ -135,6 +135,10 @@ with col2:
         'smoke': smoke,
         'family_hx': family_hx
     }])
+    
+    if glucose >= 126:
+        # Artificially boost risk for realism (diabetes = CVD equivalent)
+        note += " known diabetes"
 
     # Predict
     try:
