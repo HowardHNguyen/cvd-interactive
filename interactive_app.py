@@ -159,10 +159,8 @@ with col2:
         # === RISK FACTOR IMPACT ===
         st.markdown("### Risk Factor Impact")
         
-        smoke_coef = coef_dict.get('smoke', 0)
-        fhx_coef = coef_dict.get('family_hx', 0)
-        smoke_impact = np.exp(smoke_coef)
-        fhx_impact = np.exp(fhx_coef)
+        smoke_impact = np.exp(coef_dict.get('smoke', 0))
+        fhx_impact = np.exp(coef_dict.get('family_hx', 0))
 
         col_a, col_b = st.columns(2)
         with col_a:
