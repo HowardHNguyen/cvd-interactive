@@ -1,186 +1,201 @@
-# interactive_app.py
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 
-# ------------------------------------------------------------------
-# Train model at startup (cached, runs once)
-# ------------------------------------------------------------------
+# -------------------------------------------------------------
+# Page config MUST be the first Streamlit call
+# -------------------------------------------------------------
+st.set_page_config(
+    page_title="CVD Risk Predictor - Interactive",
+    layout="wide"
+)
+
+# -------------------------------------------------------------
+# Training / modeling utilities
+# -------------------------------------------------------------
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+
 @st.cache_resource
 def train_and_get_model():
+    """Load data, build pipeline, compute CV AUC, fit, and return model + coefs."""
     st.info("Training model... (first time only, ~3 sec)")
 
-    # FIXED: Handle any encoding (Windows, Mac, Excel)
-    df = pd.read_csv("data_cvd_perfect_300.csv", encoding='latin-1', engine='python', on_bad_lines='skip')
+    # Load attached dataset
+    df = pd.read_csv(
+        "data_cvd_perfect_300.csv",
+        encoding="latin-1",
+        engine="python",
+        on_bad_lines="skip"
+    )
 
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.pipeline import Pipeline
-    from sklearn.compose import ColumnTransformer
-
-    num_cols = ['age', 'sys_bp', 'dia_bp', 'cholesterol', 'glucose', 'bmi', 'smoke', 'family_hx']
+    # Columns by type
+    num_cont = ['age','sys_bp','dia_bp','cholesterol','glucose','bmi']
+    bin_cols = ['smoke','family_hx']
     text_col = 'note'
 
+    # Preprocessor: scale ONLY continuous features; pass through binary 0/1 as-is;
+    # a small TF-IDF space keeps the model compact & robust to phrasing.
     preprocessor = ColumnTransformer([
-        ('num', StandardScaler(), num_cols),
-        ('text', TfidfVectorizer(max_features=20, stop_words='english', ngram_range=(1,2)), text_col)
+        ('num', StandardScaler(), num_cont),
+        ('bin', 'passthrough', bin_cols),
+        ('text', TfidfVectorizer(max_features=50, stop_words='english', ngram_range=(1,2)), text_col)
     ])
 
+    # Logistic Regression with class_weight balancing; deterministic
     model = Pipeline([
         ('prep', preprocessor),
-        ('clf', LogisticRegression(C=0.4, class_weight='balanced', max_iter=1000))
+        ('clf', LogisticRegression(C=0.4, class_weight='balanced', max_iter=1000, random_state=42))
     ])
 
     X = df.drop('cvd', axis=1)
     y = df['cvd']
+
+    # Robust CV AUC for display (not hard-coded)
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    auc = cross_val_score(model, X, y, cv=cv, scoring='roc_auc').mean()
+
+    # Fit once and extract coefficients mapped to feature names in correct order
     model.fit(X, y)
 
-    # Extract coefficients
+    # Build feature name list in the same order as the transformed matrix
+    tfidf_names = model.named_steps['prep'].named_transformers_['text'].get_feature_names_out().tolist()
+    feature_names = num_cont + bin_cols + tfidf_names
+
+    # Coefficients (for binary columns 'smoke' and 'family_hx', these are true 0->1 effects now)
     coef = model.named_steps['clf'].coef_[0]
-    feature_names = (num_cols + 
-                     model.named_steps['prep'].named_transformers_['text'].get_feature_names_out().tolist())
     coef_dict = dict(zip(feature_names, coef))
-    
-    st.success("Model ready! AUC ≈ 0.84")
-    return model, coef_dict
 
-model, coef_dict = train_and_get_model()
+    st.success(f"Model ready! CV AUC = {auc:.2f}")
+    return model, coef_dict, auc
 
-# ------------------------------------------------------------------
-# Page Config
-# ------------------------------------------------------------------
-st.set_page_config(page_title="CVD Risk Predictor - Interactive", layout="wide")
+# -------------------------------------------------------------
+# Sidebar - Patient inputs
+# -------------------------------------------------------------
+model, coef_dict, auc = train_and_get_model()
 
-# ------------------------------------------------------------------
-# Sidebar: Input Controls
-# ------------------------------------------------------------------
+st.title("Input Summary")
+
 with st.sidebar:
     st.header("Patient Profile")
-    
-    age = st.slider("Age", 20, 90, 50)
-    sys_bp = st.slider("Systolic BP (mmHg)", 90, 200, 120)
-    dia_bp = st.slider("Diastolic BP (mmHg)", 50, 120, 80)
-    cholesterol = st.slider("Cholesterol (mg/dL)", 100, 350, 180)
-    glucose = st.slider("Glucose (mg/dL)", 60, 300, 100)
-    bmi = st.slider("BMI", 15.0, 50.0, 25.0, step=0.1)
-    
-    smoke = st.selectbox("Smoking", ["No", "Yes"])
-    smoke = 1 if smoke == "Yes" else 0
-    
-    family_hx = st.selectbox("Family History of CVD", ["No", "Yes"])
-    family_hx = 1 if family_hx == "Yes" else 0
-    
+    age = st.slider("Age", 20, 90, 50, step=1)
+    sys_bp = st.slider("Systolic BP (mmHg)", 90, 200, 120, step=1)
+    dia_bp = st.slider("Diastolic BP (mmHg)", 50, 120, 80, step=1)
+    cholesterol = st.slider("Cholesterol (mg/dL)", 120, 360, 180, step=1)
+    glucose = st.slider("Glucose (mg/dL)", 70, 250, 100, step=1)
+    bmi = st.slider("BMI", 15.0, 45.0, 25.0, step=0.1)
+
+    smoking_label = st.selectbox("Smoking", ["No", "Yes"])
+    family_hx_label = st.selectbox("Family History of CVD", ["No", "Yes"])
+
+    default_note = "no symptoms reported"
     note = st.text_area(
         "Clinical Note",
-        placeholder="e.g., Gets short of breath walking uphill, smokes cigarettes, family history of heart problems",
-        height=150
+        placeholder="e.g., gets short of breath walking uphill, smokes 1ppd",
+        height=100
+    ) or default_note
+
+# Convert to model-ready fields
+smoke = 1 if smoking_label == "Yes" else 0
+family_hx = 1 if family_hx_label == "Yes" else 0
+
+# Diabetes hint: append a clear phrase if glucose >= 126
+if glucose >= 126:
+    note = (note + " diabetes suspected by glucose >= 126 mg/dL").strip()
+
+# One-row DataFrame for prediction
+row = pd.DataFrame([{
+    "note": note,
+    "age": age,
+    "sys_bp": sys_bp,
+    "dia_bp": dia_bp,
+    "cholesterol": cholesterol,
+    "glucose": glucose,
+    "bmi": bmi,
+    "smoke": smoke,
+    "family_hx": family_hx,
+}])
+
+# Predict probability of 10-year CVD (class 1)
+proba = model.predict_proba(row)[0][1]
+risk_pct = 100.0 * proba
+
+# Risk bucket mapping (tweakable)
+if proba >= 0.60:
+    verdict = ("Extremely High — Urgent referral", "danger")
+elif proba >= 0.15:
+    verdict = ("High — Start treatment", "warning")
+elif proba >= 0.07:
+    verdict = ("Moderate — Consider meds", "warning")
+else:
+    verdict = ("Low — Lifestyle focus", "success")
+
+# -------------------------------------------------------------
+# Layout
+# -------------------------------------------------------------
+col_left, col_right = st.columns([1, 1.2])
+
+with col_left:
+    st.subheader("Input Summary")
+    st.markdown(
+        f"""
+        - **Age:** {age}
+        - **BP:** {sys_bp}/{dia_bp} mmHg
+        - **Cholesterol:** {cholesterol} mg/dL
+        - **Glucose:** {glucose} mg/dL
+        - **BMI:** {bmi:.1f}
+        - **Smoker:** {"Yes" if smoke else "No"}
+        - **Family Hx:** {"Yes" if family_hx else "No"}
+        """
     )
 
-# ------------------------------------------------------------------
-# Risk Interpretation & Color
-# ------------------------------------------------------------------
-def interpret_risk(val):
-    if val < 10: return "Low — Lifestyle focus"
-    elif val < 20: return "Moderate — Consider meds"
-    elif val < 30: return "High — Start treatment"
-    elif val < 40: return "Very High — Intensive care"
-    else: return "Extremely High — Urgent referral"
+with col_right:
+    st.subheader("CVD 10-Year Risk")
+    risk_style = {
+        "danger": "<span style='color:#B00020;font-weight:800;font-size:48px'>{:.1f}%</span>",
+        "warning": "<span style='color:#E67E22;font-weight:800;font-size:48px'>{:.1f}%</span>",
+        "success": "<span style='color:#2E7D32;font-weight:800;font-size:48px'>{:.1f}%</span>",
+    }[verdict[1]]
+    st.markdown(risk_style.format(risk_pct), unsafe_allow_html=True)
+    st.caption(verdict[0])
 
-def get_risk_color(val):
-    if val < 10: return "#9cc732"   # Green
-    elif val < 20: return "#fff000"  # Yellow
-    elif val < 30: return "#f3771d"  # Orange
-    elif val < 40: return "#ea1a21"  # Red
-    else: return "#9d1c1f"          # Deep Red
+    st.subheader("Risk Factor Impact")
 
-# ------------------------------------------------------------------
-# Main Panel
-# ------------------------------------------------------------------
-col1, col2 = st.columns([1, 1])
+    # Because we didn't scale binary columns, these are true 0->1 odds ratios
+    smoke_or = float(np.exp(coef_dict.get('smoke', 0.0)))
+    fhx_or = float(np.exp(coef_dict.get('family_hx', 0.0)))
 
-with col1:
-    st.markdown("### Input Summary")
-    summary = f"""
-    - **Age**: {age}  
-    - **BP**: {sys_bp}/{dia_bp} mmHg  
-    - **Cholesterol**: {cholesterol} mg/dL  
-    - **Glucose**: {glucose} mg/dL  
-    - **BMI**: {bmi:.1f}  
-    - **Smoker**: {'Yes' if smoke else 'No'}  
-    - **Family Hx**: {'Yes' if family_hx else 'No'}  
-    """
-    st.markdown(summary)
+    c1, c2 = st.columns(2)
+    with c1:
+        st.metric("Smoking", f"{smoke_or:.1f}× risk" if smoke else "No impact")
+    with c2:
+        st.metric("Family History", f"{fhx_or:.1f}× risk" if family_hx else "No impact")
 
-with col2:
-    with st.expander("About This App", expanded=False):
-        st.markdown("""
-        ### Interactive CVD Risk Predictor  
-        **Real-time 10-year risk** of **heart attack or stroke** using **clinical notes + vitals**.
+    st.caption("Odds multipliers reflect model effects; 'No impact' means this factor is not present for the current patient.")
 
-        - **No data leakage** — Zero use of "MI", "CAD", "stroke" in training  
-        - **AUC ≈ 0.84** — Realistic and deployable  
-        - **WHO/ISH 2007** risk levels  
-        - **TF-IDF + vitals fusion** → learns from language + biology  
-        - **Built for doctors, clinics, and patients**
+with st.expander("About This App"):
+    st.markdown(
+        f"""
+        **Model:** TF‑IDF (clinical note) + Standardized vitals + Logistic Regression (`balanced`).
+        **CV AUC:** {auc:.2f} on the attached dataset using 5‑fold Stratified CV.
 
-        > **This is hospital-grade AI.**
-        """)
+        **Important:** This tool is for educational purposes and decision support only — not a diagnostic device. 
+        Discuss any concerns with a licensed clinician.
+        """
+    )
 
-    st.markdown("<h2 style='text-align: center; margin-top: -10px;'>CVD 10-Year Risk</h2>", unsafe_allow_html=True)
-    
-    input_data = pd.DataFrame([{
-        'note': note if note.strip() else "no symptoms reported",
-        'age': age, 'sys_bp': sys_bp, 'dia_bp': dia_bp,
-        'cholesterol': cholesterol, 'glucose': glucose,
-        'bmi': bmi, 'smoke': smoke, 'family_hx': family_hx
-    }])
-
-    if glucose >= 126:
-        input_data['note'] = input_data['note'].apply(lambda x: x + " known diabetes")
-
-    try:
-        prob = model.predict_proba(input_data)[:, 1][0]
-        risk_pct = round(prob * 100, 1)
-        interpretation = interpret_risk(risk_pct)
-        color = get_risk_color(risk_pct)
-
-        st.markdown(
-            f"<h1 style='text-align: center; color: {color}; margin-top: 20px;'>"
-            f"{risk_pct:.1f}%</h1>",
-            unsafe_allow_html=True
-        )
-        st.markdown(
-            f"<p style='text-align: center; font-size: 18px; font-weight: bold; margin-top: -10px;'>"
-            f"{interpretation}</p>",
-            unsafe_allow_html=True
-        )
-
-        # === RISK FACTOR IMPACT ===
-        st.markdown("### Risk Factor Impact")
-        
-        smoke_impact = np.exp(coef_dict.get('smoke', 0))
-        fhx_impact = np.exp(coef_dict.get('family_hx', 0))
-
-        col_a, col_b = st.columns(2)
-        with col_a:
-            st.metric("Smoking", f"{smoke_impact:.1f}× risk" if smoke else "No impact")
-        with col_b:
-            st.metric("Family History", f"{fhx_impact:.1f}× risk" if family_hx else "No impact")
-
-        st.caption(f"Model: Smoking {smoke_impact:.1f}× | Family Hx {fhx_impact:.1f}× | Real-world: ~3× and ~2×")
-
-    except Exception as e:
-        st.error(f"Prediction error: {e}")
-
-# ------------------------------------------------------------------
-# Footer
-# ------------------------------------------------------------------
-st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: gray;'>"
-    "By Howard Nguyen, PhD, 2025. Developed with TF-IDF + Logistic Regression | No data leakage | AUC ≈ 0.84 | "
-    "Smoking: 3.7× | Family Hx: ~2.3× (balanced)"
-    "</p>",
+    """
+    <hr/>
+    <div style='font-size:12px;color:#6b6b6b'>
+    By Howard Nguyen, PhD, 2025. Developed with TF‑IDF + Logistic Regression | CV AUC dynamically computed | 
+    Smoking and Family Hx odds multipliers reflect true 0→1 effects (binary features are not scaled).
+    </div>
+    """,
     unsafe_allow_html=True
 )
