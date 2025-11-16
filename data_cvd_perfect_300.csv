@@ -299,3 +299,15 @@ Recent,71,150,90,225,118,29.2,1,1,1
 "Healthy runner, no risks",29,105,65,145,78,18.5,0,0,0
 "Post-CABG, doing well",74,138,82,195,105,27,0,1,1
 "Final row, active, normal labs",44,118,76,170,95,23.8,0,0,0
+"Family history of early MI, but patient active, normal lipids, no symptoms",48,118,76,165,92,23.5,0,1,0
+"Dad had stent at 60, patient runs 5K, BMI 22, no smoking",42,115,74,160,88,22,0,1,0
+"Strong family hx, but echo normal, stress test negative",50,120,78,170,90,24,0,1,0
+"Mother had CABG, patient on statin, lipids controlled",55,128,80,175,95,25.5,0,1,0
+"Family hx positive, but patient vegetarian, BMI 21, active",45,116,74,162,85,21,0,1,0
+"Brother had MI at 52, patient quit smoking 10y ago, normal BP",58,130,82,180,98,26,0,1,0
+"Family history, but calcium score 0, no diabetes",47,118,76,168,90,23.8,0,1,0
+"Dad died of heart attack at 55, patient on rosuvastatin, LDL 70",53,125,80,170,92,25,0,1,0
+"Family hx, but patient marathon runner, no risk factors",40,110,70,155,82,20.5,0,1,0
+"Sister had stroke, patient on aspirin, normal carotid ultrasound",51,122,78,172,88,24.5,0,1,0
+"Family history of CAD, but patient’s CT angio normal",49,116,74,165,85,23,0,1,0
+"Grandfather had MI, patient young, active, no meds",38,112,72,158,80,21.8,0,1,0
