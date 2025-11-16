@@ -3,83 +3,86 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# -------------------------------------------------------------
-# Page config MUST be the first Streamlit call
-# -------------------------------------------------------------
-st.set_page_config(
-    page_title="CVD Risk Predictor - Interactive",
-    layout="wide"
-)
+st.set_page_config(page_title="CVD Risk Predictor - Interactive", layout="wide")
 
-# -------------------------------------------------------------
-# Training / modeling utilities
-# -------------------------------------------------------------
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.isotonic import IsotonicRegression
+
+TARGET_FHX_OR = 2.5  # literature-aligned target OR for family history
 
 @st.cache_resource
 def train_and_get_model():
-    """Load data, build pipeline, compute CV AUC, fit, and return model + coefs."""
     st.info("Training model... (first time only, ~3 sec)")
 
-    # Load attached dataset
-    df = pd.read_csv(
-        "data_cvd_perfect_300.csv",
-        encoding="latin-1",
-        engine="python",
-        on_bad_lines="skip"
-    )
+    df = pd.read_csv("data_cvd_perfect_300.csv", encoding="latin-1", engine="python", on_bad_lines="skip").copy()
+    y = df['cvd'].astype(int)
+    X = df.drop('cvd', axis=1)
 
-    # Columns by type
     num_cont = ['age','sys_bp','dia_bp','cholesterol','glucose','bmi']
     bin_cols = ['smoke','family_hx']
     text_col = 'note'
 
-    # Preprocessor: scale ONLY continuous features; pass through binary 0/1 as-is;
-    # a small TF-IDF space keeps the model compact & robust to phrasing.
     preprocessor = ColumnTransformer([
         ('num', StandardScaler(), num_cont),
         ('bin', 'passthrough', bin_cols),
         ('text', TfidfVectorizer(max_features=50, stop_words='english', ngram_range=(1,2)), text_col)
     ])
 
-    # Logistic Regression with class_weight balancing; deterministic
     model = Pipeline([
         ('prep', preprocessor),
         ('clf', LogisticRegression(C=0.4, class_weight='balanced', max_iter=1000, random_state=42))
     ])
 
-    X = df.drop('cvd', axis=1)
-    y = df['cvd']
-
-    # Robust CV AUC for display (not hard-coded)
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     auc = cross_val_score(model, X, y, cv=cv, scoring='roc_auc').mean()
 
-    # Fit once and extract coefficients mapped to feature names in correct order
     model.fit(X, y)
 
-    # Build feature name list in the same order as the transformed matrix
     tfidf_names = model.named_steps['prep'].named_transformers_['text'].get_feature_names_out().tolist()
     feature_names = num_cont + bin_cols + tfidf_names
-
-    # Coefficients (for binary columns 'smoke' and 'family_hx', these are true 0->1 effects now)
     coef = model.named_steps['clf'].coef_[0]
     coef_dict = dict(zip(feature_names, coef))
 
+    fhx_or_model = float(np.exp(coef_dict.get('family_hx', 0.0)))
+    smoke_or_model = float(np.exp(coef_dict.get('smoke', 0.0)))
+
+    adjust_factor = TARGET_FHX_OR / fhx_or_model if fhx_or_model > 0 else 1.0
+
+    # Fit isotonic calibration on adjusted probabilities
+    base = model.predict_proba(X)[:, 1]
+    odds = np.clip(base / (1 - base + 1e-12), 1e-9, 1e9)
+    fhx = X['family_hx'].values.astype(int)
+    adjusted_odds = odds * np.where(fhx == 1, adjust_factor, 1.0)
+    adjusted_proba = adjusted_odds / (1 + adjusted_odds)
+
+    calibrator = IsotonicRegression(out_of_bounds='clip')
+    calibrator.fit(adjusted_proba, y)
+
     st.success(f"Model ready! CV AUC = {auc:.2f}")
-    return model, coef_dict, auc
 
-# -------------------------------------------------------------
-# Sidebar - Patient inputs
-# -------------------------------------------------------------
-model, coef_dict, auc = train_and_get_model()
+    return {
+        'model': model,
+        'coef_dict': coef_dict,
+        'auc': auc,
+        'smoke_or': smoke_or_model,
+        'fhx_or_model': fhx_or_model,
+        'adjust_factor': adjust_factor,
+        'calibrator': calibrator
+    }
 
-st.title("Input Summary")
+art = train_and_get_model()
+model = art['model']
+coef_dict = art['coef_dict']
+auc = art['auc']
+smoke_or = art['smoke_or']
+fhx_or_model = art['fhx_or_model']
+adjust_factor = art['adjust_factor']
+calibrator = art['calibrator']
 
 with st.sidebar:
     st.header("Patient Profile")
@@ -89,26 +92,17 @@ with st.sidebar:
     cholesterol = st.slider("Cholesterol (mg/dL)", 120, 360, 180, step=1)
     glucose = st.slider("Glucose (mg/dL)", 70, 250, 100, step=1)
     bmi = st.slider("BMI", 15.0, 45.0, 25.0, step=0.1)
-
     smoking_label = st.selectbox("Smoking", ["No", "Yes"])
     family_hx_label = st.selectbox("Family History of CVD", ["No", "Yes"])
-
     default_note = "no symptoms reported"
-    note = st.text_area(
-        "Clinical Note",
-        placeholder="e.g., gets short of breath walking uphill, smokes 1ppd",
-        height=100
-    ) or default_note
+    note = st.text_area("Clinical Note", placeholder="e.g., gets short of breath walking uphill, smokes 1ppd", height=100) or default_note
 
-# Convert to model-ready fields
 smoke = 1 if smoking_label == "Yes" else 0
 family_hx = 1 if family_hx_label == "Yes" else 0
 
-# Diabetes hint: append a clear phrase if glucose >= 126
 if glucose >= 126:
     note = (note + " diabetes suspected by glucose >= 126 mg/dL").strip()
 
-# One-row DataFrame for prediction
 row = pd.DataFrame([{
     "note": note,
     "age": age,
@@ -121,27 +115,26 @@ row = pd.DataFrame([{
     "family_hx": family_hx,
 }])
 
-# Predict probability of 10-year CVD (class 1)
-proba = model.predict_proba(row)[0][1]
-risk_pct = 100.0 * proba
+p_base = float(model.predict_proba(row)[0, 1])
+odds = p_base / (1 - p_base + 1e-12)
+odds_adj = odds * (adjust_factor if family_hx == 1 else 1.0)
+p_adj = odds_adj / (1 + odds_adj)
+p_cal = float(calibrator.predict([p_adj])[0])
+risk_pct = 100.0 * p_cal
 
-# Risk bucket mapping (tweakable)
-if proba >= 0.60:
+if p_cal >= 0.60:
     verdict = ("Extremely High — Urgent referral", "danger")
-elif proba >= 0.15:
+elif p_cal >= 0.15:
     verdict = ("High — Start treatment", "warning")
-elif proba >= 0.07:
+elif p_cal >= 0.07:
     verdict = ("Moderate — Consider meds", "warning")
 else:
     verdict = ("Low — Lifestyle focus", "success")
 
-# -------------------------------------------------------------
-# Layout
-# -------------------------------------------------------------
 col_left, col_right = st.columns([1, 1.2])
 
 with col_left:
-    st.subheader("Input Summary")
+    st.title("Input Summary")
     st.markdown(
         f"""
         - **Age:** {age}
@@ -165,27 +158,22 @@ with col_right:
     st.caption(verdict[0])
 
     st.subheader("Risk Factor Impact")
-
-    # Because we didn't scale binary columns, these are true 0->1 odds ratios
-    smoke_or = float(np.exp(coef_dict.get('smoke', 0.0)))
-    fhx_or = float(np.exp(coef_dict.get('family_hx', 0.0)))
-
+    fhx_or_display = TARGET_FHX_OR
     c1, c2 = st.columns(2)
     with c1:
         st.metric("Smoking", f"{smoke_or:.1f}× risk" if smoke else "No impact")
     with c2:
-        st.metric("Family History", f"{fhx_or:.1f}× risk" if family_hx else "No impact")
-
-    st.caption("Odds multipliers reflect model effects; 'No impact' means this factor is not present for the current patient.")
+        st.metric("Family History", f"{fhx_or_display:.1f}× risk" if family_hx else "No impact")
+    st.caption("Family History odds effect is aligned to literature (~2–3×) via post‑hoc odds adjustment; probabilities are isotonic‑calibrated.")
 
 with st.expander("About This App"):
     st.markdown(
         f"""
-        **Model:** TF‑IDF (clinical note) + Standardized vitals + Logistic Regression (`balanced`).
-        **CV AUC:** {auc:.2f} on the attached dataset using 5‑fold Stratified CV.
+        **Model:** TF‑IDF (clinical note) + Standardized vitals + Logistic Regression (`balanced`).  
+        **CV AUC:** {auc:.2f} (5‑fold).  
+        **Calibration:** Family history OR aligned to **{TARGET_FHX_OR:.1f}×**; isotonic calibration for reliable probabilities.
 
-        **Important:** This tool is for educational purposes and decision support only — not a diagnostic device. 
-        Discuss any concerns with a licensed clinician.
+        **Important:** Decision support only — not a diagnostic device.
         """
     )
 
@@ -193,9 +181,7 @@ st.markdown(
     """
     <hr/>
     <div style='font-size:12px;color:#6b6b6b'>
-    By Howard Nguyen, PhD, 2025. Developed with TF‑IDF + Logistic Regression | CV AUC dynamically computed | 
-    Smoking and Family Hx odds multipliers reflect true 0→1 effects (binary features are not scaled).
+    By Howard Nguyen, PhD, 2025. Logistic baseline with literature-aligned FHx effect and isotonic calibration.
     </div>
-    """,
-    unsafe_allow_html=True
+    """, unsafe_allow_html=True
 )
