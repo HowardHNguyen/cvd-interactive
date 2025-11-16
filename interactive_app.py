@@ -10,7 +10,8 @@ import numpy as np
 def train_and_get_model():
     st.info("Training model... (first time only, ~3 sec)")
 
-    df = pd.read_csv("data_cvd_perfect_300.csv")
+    # FIXED: Handle any encoding (Windows, Mac, Excel)
+    df = pd.read_csv("data_cvd_perfect_300.csv", encoding='latin-1', engine='python', on_bad_lines='skip')
 
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.linear_model import LogisticRegression
@@ -94,7 +95,7 @@ def get_risk_color(val):
     else: return "#9d1c1f"          # Deep Red
 
 # ------------------------------------------------------------------
-# Main Panel: Real-Time Prediction
+# Main Panel
 # ------------------------------------------------------------------
 col1, col2 = st.columns([1, 1])
 
@@ -128,7 +129,6 @@ with col2:
 
     st.markdown("<h2 style='text-align: center; margin-top: -10px;'>CVD 10-Year Risk</h2>", unsafe_allow_html=True)
     
-    # Build input DataFrame
     input_data = pd.DataFrame([{
         'note': note if note.strip() else "no symptoms reported",
         'age': age, 'sys_bp': sys_bp, 'dia_bp': dia_bp,
@@ -179,7 +179,7 @@ with col2:
         st.caption("Based on model coefficients. Real-world: Smoking ~3×, Family Hx ~2×")
 
     except Exception as e:
-        st.error("Prediction error. Check inputs.")
+        st.error(f"Prediction error: {e}")
 
 # ------------------------------------------------------------------
 # Footer
