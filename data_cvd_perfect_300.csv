@@ -309,7 +309,7 @@ Recent,71,150,90,225,118,29.2,1,1,1
 "Dad died of heart attack at 55, patient on rosuvastatin, LDL 70",53,125,80,170,92,25.0,0,1,0
 "Family hx, but patient marathon runner, no risk factors",40,110,70,155,82,20.5,0,1,0
 "Sister had stroke, patient on aspirin, normal carotid ultrasound",51,122,78,172,88,24.5,0,1,0
-"Family history of CAD, but patientÃs CT angio normal",49,116,74,165,85,23.0,0,1,0
+"Family history of CAD, but patientÃÂs CT angio normal",49,116,74,165,85,23.0,0,1,0
 "Grandfather had MI, patient young, active, no meds",38,112,72,158,80,21.8,0,1,0
 "Family history of early CAD, but calcium score 0, no diabetes",52,120,77,170,86,21.8,0,1,0
 "Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",48,113,77,173,82,20.1,0,1,0
@@ -336,3 +336,33 @@ Recent,71,150,90,225,118,29.2,1,1,1
 "Father had MI at 65, patient very active, normal lipids, no symptoms",42,126,77,166,96,23.9,0,1,0
 "Family history of early CAD, but calcium score 0, no diabetes",42,110,70,168,81,22.1,0,1,0
 "Strong family hx, but patient runs marathons, BMI 21, no smoking",43,113,76,160,96,22.9,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",54,120,77,178,86,22.3,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",50,120,77,170,83,21.1,0,1,0
+"Mother had stroke at 70, patient on statin, carotid clear",41,117,75,151,80,21.7,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",51,118,70,176,89,20.7,0,1,0
+"Brother had CABG, patient quit smoking 12y ago, BP 118/74",55,124,72,161,82,23.9,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",48,116,71,153,93,23.7,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",41,113,76,161,87,20.6,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",56,113,71,157,83,21.7,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",49,113,75,178,97,23.6,0,1,0
+"Strong family hx, but patient vegan, BMI 21, normal echo",49,123,73,163,95,21.8,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",47,114,71,164,92,21.1,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",52,110,78,156,88,23.6,0,1,0
+"Brother had CABG, patient quit smoking 12y ago, BP 118/74",47,117,72,166,87,23.4,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",44,119,76,175,88,24.2,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",47,121,71,150,95,22.0,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",44,112,77,171,82,22.4,0,1,0
+"Family history of CAD, but calcium score 0, stress test negative",54,123,72,150,84,22.7,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",53,116,78,164,94,20.9,0,1,0
+"Brother had CABG, patient quit smoking 12y ago, BP 118/74",52,112,76,166,83,24.1,0,1,0
+"Family hx positive, but patient’s CT angio normal, LDL 78",46,122,73,162,86,21.7,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",41,119,78,170,85,22.3,0,1,0
+"Brother had CABG, patient quit smoking 12y ago, BP 118/74",51,113,79,172,86,24.1,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",52,118,72,156,85,22.5,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",44,110,72,159,91,21.5,0,1,0
+"Mother had stroke at 70, patient on statin, carotid clear",48,113,70,179,96,21.5,0,1,0
+"Brother had CABG, patient quit smoking 12y ago, BP 118/74",46,111,72,166,84,21.6,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",56,111,71,177,84,21.9,0,1,0
+"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",41,114,79,155,83,20.8,0,1,0
+"Sister had MI, patient on rosuvastatin, lipids controlled",56,124,75,173,84,23.0,0,1,0
+"Dad died of heart attack at 72, patient active, no diabetes",50,124,70,158,85,23.3,0,1,0

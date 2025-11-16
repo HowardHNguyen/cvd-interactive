@@ -159,9 +159,11 @@ with col2:
         # === RISK FACTOR IMPACT ===
         st.markdown("### Risk Factor Impact")
         
-        smoke_impact = np.exp(coef_dict.get('smoke', 0))
-        fhx_impact = np.exp(coef_dict.get('family_hx', 0))
-        
+        smoke_coef = coef_dict.get('smoke', 0)
+        fhx_coef = coef_dict.get('family_hx', 0)
+        smoke_impact = np.exp(smoke_coef)
+        fhx_impact = np.exp(fhx_coef)
+
         col_a, col_b = st.columns(2)
         with col_a:
             st.metric("Smoking", f"{smoke_impact:.1f}× risk" if smoke else "No impact")
