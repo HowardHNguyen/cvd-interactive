@@ -1,0 +1,501 @@
+note,age,sys_bp,dia_bp,cholesterol,glucose,bmi,smoke,family_hx,cvd
+"palpitations at night, quit smoking 2y ago, father MI at 52",76,154,75,174,73,21.7,1,1,0
+"shortness of breath walking uphill, quit smoking 2y ago, father MI at 52",52,123,95,233,115,31.0,1,1,0
+"no current symptoms, quit smoking 2y ago, no family history, diabetes suspected by glucose >= 126 mg/dL",49,151,72,169,140,21.9,0,0,0
+"shortness of breath walking uphill, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",23,109,87,170,129,22.9,0,1,0
+"palpitations at night, high salt diet, family history premature CAD",55,131,95,284,81,29.8,0,0,0
+"shortness of breath walking uphill, high salt diet, family history premature CAD",51,151,72,192,80,31.4,0,1,0
+"no current symptoms, smokes 1ppd, no family history",49,127,103,188,101,35.7,0,0,0
+"palpitations at night, never smoked, no family history",59,153,91,211,102,27.1,1,0,0
+"shortness of breath walking uphill, on statin therapy, mother stroke at 60",60,96,60,160,124,31.4,0,0,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",42,132,96,207,98,19.1,0,0,0
+"no current symptoms, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",44,135,101,154,134,30.1,0,0,0
+"no current symptoms, quit smoking 2y ago, mother stroke at 60",49,130,80,178,92,31.2,1,0,0
+"chest pain on exertion, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",63,105,80,175,132,31.7,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",62,144,86,242,70,25.2,0,0,0
+"no current symptoms, smokes 1ppd, mother stroke at 60",39,90,63,217,92,33.8,0,0,0
+"chest pain on exertion, never smoked, mother stroke at 60",42,149,84,260,107,34.8,0,0,0
+"shortness of breath walking uphill, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",64,137,92,254,126,27.5,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, no family history",74,150,77,171,119,27.7,0,0,0
+"shortness of breath walking uphill, high salt diet, mother stroke at 60",55,127,93,214,84,25.9,0,0,0
+"chest pain on exertion, smokes 1ppd, family history premature CAD",47,112,104,180,73,26.1,1,0,1
+"chest pain on exertion, on statin therapy, family history premature CAD",68,123,63,173,105,27.4,0,0,1
+"chest pain on exertion, quit smoking 2y ago, father MI at 52",51,124,64,237,104,21.6,1,0,0
+"chest pain on exertion, never smoked, mother stroke at 60",64,143,75,245,96,21.2,0,0,0
+"no current symptoms, high salt diet, father MI at 52",74,126,89,200,105,26.2,1,0,0
+"chest pain on exertion, smokes 1ppd, family history premature CAD",63,139,86,207,73,25.0,0,1,1
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",56,141,73,205,119,31.8,0,1,0
+"chest pain on exertion, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",64,158,71,207,131,26.4,1,1,0
+"no current symptoms, quit smoking 2y ago, no family history",47,96,75,208,84,23.0,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",53,125,99,160,85,19.3,0,0,0
+"shortness of breath walking uphill, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",48,144,73,217,137,25.8,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",53,145,76,171,133,22.5,0,1,1
+"no current symptoms, never smoked, father MI at 52",49,122,92,153,86,19.2,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",53,127,79,190,89,36.1,0,0,0
+"shortness of breath walking uphill, never smoked, no family history",50,130,72,205,70,18.6,0,0,0
+"chest pain on exertion, on statin therapy, no family history",56,135,97,225,118,35.0,1,1,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",56,122,86,208,111,41.5,0,1,0
+"no current symptoms, smokes 1ppd, father MI at 52",59,121,75,205,107,28.0,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",72,112,78,172,162,25.5,1,1,1
+"chest pain on exertion, on statin therapy, father MI at 52",36,125,92,209,101,30.6,1,1,0
+"shortness of breath walking uphill, high salt diet, family history premature CAD",71,157,79,203,103,23.4,1,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",52,115,85,205,112,28.4,1,1,1
+"palpitations at night, quit smoking 2y ago, family history premature CAD",40,150,91,169,101,31.0,1,0,1
+"no current symptoms, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",53,167,92,255,134,21.8,0,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD",56,136,64,222,102,34.6,0,0,0
+"palpitations at night, quit smoking 2y ago, family history premature CAD",68,175,77,219,109,27.9,0,0,1
+"shortness of breath walking uphill, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",42,130,79,198,162,28.9,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",58,162,83,185,92,33.6,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",56,132,90,228,76,21.2,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",35,111,94,149,110,21.8,0,1,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",41,139,78,179,91,28.9,0,0,0
+"no current symptoms, high salt diet, mother stroke at 60",62,167,71,185,90,29.3,0,0,0
+"palpitations at night, high salt diet, mother stroke at 60",63,122,84,215,112,26.5,0,1,0
+"shortness of breath walking uphill, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",68,141,76,184,127,27.1,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",61,115,100,245,70,26.4,1,0,0
+"chest pain on exertion, high salt diet, mother stroke at 60",60,117,86,133,101,23.2,0,0,1
+"palpitations at night, high salt diet, mother stroke at 60",56,141,83,250,70,21.6,1,0,1
+"chest pain on exertion, never smoked, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",70,129,93,206,129,24.2,0,0,1
+"chest pain on exertion, high salt diet, mother stroke at 60",45,143,76,228,80,28.1,0,0,0
+"palpitations at night, on statin therapy, father MI at 52",53,156,79,177,122,29.5,1,0,1
+"chest pain on exertion, smokes 1ppd, no family history, diabetes suspected by glucose >= 126 mg/dL",60,112,81,231,151,21.8,0,0,0
+"no current symptoms, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",36,120,89,183,139,35.4,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",71,134,96,204,116,38.2,0,0,0
+"palpitations at night, never smoked, father MI at 52",45,175,90,143,70,28.4,0,0,0
+"no current symptoms, smokes 1ppd, no family history, diabetes suspected by glucose >= 126 mg/dL",54,127,90,214,153,23.8,0,1,0
+"no current symptoms, on statin therapy, mother stroke at 60",81,124,80,199,95,26.7,0,0,1
+"shortness of breath walking uphill, smokes 1ppd, no family history",45,141,86,129,125,31.1,0,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",49,171,80,191,93,27.1,1,0,0
+"palpitations at night, quit smoking 2y ago, father MI at 52",74,123,94,184,99,36.1,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",42,128,76,224,146,26.2,1,0,0
+"palpitations at night, on statin therapy, no family history",50,134,82,171,70,31.8,1,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",61,147,85,201,74,29.6,1,0,0
+"palpitations at night, never smoked, family history premature CAD",60,172,90,240,98,37.7,0,0,0
+"no current symptoms, high salt diet, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",62,111,75,164,132,29.4,0,1,0
+"shortness of breath walking uphill, on statin therapy, mother stroke at 60",59,103,80,261,70,29.7,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",71,136,74,203,137,23.6,1,0,1
+"no current symptoms, high salt diet, no family history",67,143,69,187,95,26.4,1,0,1
+"chest pain on exertion, smokes 1ppd, father MI at 52",62,93,93,147,123,21.5,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",47,122,87,132,171,42.2,0,0,0
+"palpitations at night, smokes 1ppd, no family history",46,151,67,228,118,27.8,0,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",32,124,73,178,133,26.6,0,0,0
+"no current symptoms, high salt diet, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",63,142,88,173,140,27.7,0,1,0
+"palpitations at night, quit smoking 2y ago, mother stroke at 60",33,137,76,232,98,29.4,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",66,145,72,218,109,30.1,0,0,0
+"shortness of breath walking uphill, never smoked, mother stroke at 60",77,141,95,199,101,19.5,0,0,0
+"palpitations at night, smokes 1ppd, family history premature CAD",42,138,78,143,111,33.4,1,0,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",47,156,79,126,98,27.9,1,0,0
+"chest pain on exertion, smokes 1ppd, no family history",49,124,88,228,92,27.3,1,0,0
+"no current symptoms, smokes 1ppd, no family history",65,136,75,193,90,35.8,0,0,0
+"palpitations at night, high salt diet, father MI at 52",45,154,83,185,124,28.8,0,0,0
+"shortness of breath walking uphill, on statin therapy, no family history",53,124,84,262,72,24.0,0,0,1
+"no current symptoms, never smoked, no family history",49,127,90,180,108,23.7,1,0,0
+"no current symptoms, on statin therapy, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",52,120,75,207,140,31.1,0,0,0
+"no current symptoms, on statin therapy, father MI at 52",70,117,93,270,70,27.9,0,0,0
+"no current symptoms, high salt diet, no family history",43,170,86,216,70,28.2,0,0,0
+"no current symptoms, smokes 1ppd, mother stroke at 60",56,142,100,175,122,21.7,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52",58,168,85,165,85,28.3,0,0,1
+"palpitations at night, on statin therapy, father MI at 52",65,147,77,238,87,24.5,1,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",40,135,77,151,121,23.9,1,0,1
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",68,129,71,224,113,33.4,0,0,1
+"palpitations at night, smokes 1ppd, father MI at 52",60,139,82,252,88,28.9,0,1,0
+"no current symptoms, quit smoking 2y ago, mother stroke at 60",65,133,82,192,97,26.3,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, no family history",56,150,91,224,70,32.1,1,0,1
+"palpitations at night, never smoked, family history premature CAD",35,118,83,198,90,36.1,0,1,0
+"chest pain on exertion, high salt diet, no family history",47,137,74,245,103,20.7,0,1,1
+"chest pain on exertion, never smoked, mother stroke at 60",65,142,93,205,119,31.9,1,1,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",55,130,78,171,120,28.7,0,1,0
+"no current symptoms, quit smoking 2y ago, no family history, diabetes suspected by glucose >= 126 mg/dL",54,130,85,208,149,27.2,1,0,0
+"chest pain on exertion, high salt diet, mother stroke at 60",76,144,97,201,103,34.0,0,0,1
+"chest pain on exertion, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",81,144,95,174,130,31.5,1,0,0
+"shortness of breath walking uphill, never smoked, mother stroke at 60",55,132,75,187,112,25.5,1,0,1
+"palpitations at night, on statin therapy, family history premature CAD",78,134,81,153,80,33.3,0,0,0
+"chest pain on exertion, never smoked, no family history",31,124,96,166,113,26.7,1,1,0
+"no current symptoms, never smoked, no family history",30,144,92,218,114,27.5,1,0,1
+"no current symptoms, never smoked, no family history",65,132,88,130,122,21.6,0,0,0
+"palpitations at night, high salt diet, father MI at 52",52,106,91,205,118,27.8,0,1,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",62,128,60,196,108,30.3,1,0,1
+"shortness of breath walking uphill, high salt diet, family history premature CAD",61,145,79,175,83,26.1,0,0,1
+"shortness of breath walking uphill, high salt diet, mother stroke at 60",54,139,68,245,97,27.7,1,0,0
+"shortness of breath walking uphill, on statin therapy, family history premature CAD",63,118,76,220,112,33.4,0,0,0
+"no current symptoms, never smoked, mother stroke at 60",57,147,78,174,121,26.9,0,1,0
+"chest pain on exertion, high salt diet, father MI at 52",37,144,87,202,125,24.7,0,0,1
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",58,144,94,228,114,35.3,1,0,0
+"no current symptoms, never smoked, father MI at 52",57,161,90,140,121,24.3,0,0,0
+"no current symptoms, high salt diet, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",77,127,85,203,141,16.7,0,0,1
+"no current symptoms, on statin therapy, family history premature CAD",41,144,78,187,110,21.7,0,0,1
+"shortness of breath walking uphill, on statin therapy, family history premature CAD",55,129,95,209,92,26.4,0,1,0
+"palpitations at night, high salt diet, father MI at 52",50,151,84,269,70,22.0,0,1,1
+"palpitations at night, smokes 1ppd, no family history",53,154,64,172,106,22.3,0,0,1
+"palpitations at night, smokes 1ppd, mother stroke at 60",75,142,81,183,121,25.3,0,0,0
+"shortness of breath walking uphill, never smoked, no family history",60,147,87,153,96,26.7,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",49,119,72,203,142,26.4,0,0,0
+"palpitations at night, smokes 1ppd, family history premature CAD",57,144,84,217,83,27.5,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, no family history",64,112,97,120,96,32.5,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",43,172,79,247,104,42.6,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",52,154,81,252,74,33.0,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",74,105,81,120,130,30.6,0,0,0
+"shortness of breath walking uphill, never smoked, no family history",65,90,72,142,86,24.5,1,0,0
+"chest pain on exertion, quit smoking 2y ago, no family history",54,156,77,212,75,28.0,0,0,0
+"no current symptoms, on statin therapy, father MI at 52",49,117,71,199,70,22.8,0,0,0
+"no current symptoms, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",53,142,78,237,128,27.5,0,0,0
+"palpitations at night, never smoked, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",36,109,73,186,136,22.6,0,0,0
+"palpitations at night, on statin therapy, mother stroke at 60",66,134,91,241,79,32.5,1,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",59,121,80,148,70,37.2,0,1,0
+"palpitations at night, high salt diet, no family history",57,143,90,210,93,32.0,0,0,0
+"chest pain on exertion, on statin therapy, family history premature CAD",39,126,69,181,104,39.8,0,1,1
+"chest pain on exertion, quit smoking 2y ago, father MI at 52",46,159,81,179,91,22.5,1,1,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",61,119,87,134,116,31.6,0,1,0
+"chest pain on exertion, smokes 1ppd, mother stroke at 60",58,155,88,182,78,27.1,0,1,0
+"no current symptoms, never smoked, no family history, diabetes suspected by glucose >= 126 mg/dL",49,132,75,244,156,28.4,1,1,0
+"palpitations at night, never smoked, family history premature CAD",61,142,80,173,113,22.7,1,0,1
+"chest pain on exertion, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",66,104,82,188,130,27.4,0,0,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",47,101,78,201,94,27.2,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history, diabetes suspected by glucose >= 126 mg/dL",49,151,77,162,128,24.4,0,0,0
+"palpitations at night, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",45,110,87,206,146,32.8,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD",41,126,69,216,86,31.1,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",65,126,63,188,108,33.0,1,0,0
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",61,116,76,131,130,25.2,0,0,0
+"no current symptoms, quit smoking 2y ago, no family history",59,136,84,250,115,24.6,1,0,0
+"palpitations at night, never smoked, family history premature CAD",41,107,58,198,84,22.3,0,0,1
+"palpitations at night, quit smoking 2y ago, father MI at 52",42,111,95,196,93,31.4,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52",54,149,82,189,119,32.0,1,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",50,118,87,176,113,27.5,0,0,0
+"palpitations at night, on statin therapy, no family history",56,145,73,138,88,24.3,1,0,0
+"chest pain on exertion, high salt diet, no family history",47,144,81,195,113,28.0,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",63,159,100,202,70,29.8,1,0,1
+"shortness of breath walking uphill, on statin therapy, no family history",77,140,100,231,107,30.0,0,1,0
+"no current symptoms, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",74,99,88,254,129,26.4,0,0,0
+"shortness of breath walking uphill, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",74,120,79,171,128,32.7,1,0,0
+"palpitations at night, on statin therapy, father MI at 52",56,125,80,253,94,33.5,0,0,0
+"palpitations at night, never smoked, mother stroke at 60",66,154,95,200,111,23.6,0,1,0
+"shortness of breath walking uphill, on statin therapy, father MI at 52",50,138,74,217,110,29.1,0,0,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",66,123,72,161,102,28.0,1,0,1
+"palpitations at night, smokes 1ppd, no family history",50,140,80,209,84,21.7,1,1,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",49,126,91,164,70,25.1,0,1,1
+"palpitations at night, never smoked, mother stroke at 60",47,142,70,221,89,28.8,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",63,135,85,153,73,33.1,0,0,0
+"no current symptoms, quit smoking 2y ago, family history premature CAD",58,152,85,198,70,24.4,0,0,1
+"no current symptoms, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",57,138,83,182,132,25.9,1,0,0
+"palpitations at night, on statin therapy, mother stroke at 60",41,150,80,209,70,26.7,0,1,0
+"no current symptoms, smokes 1ppd, mother stroke at 60",57,132,91,206,85,25.7,0,0,0
+"no current symptoms, quit smoking 2y ago, father MI at 52",38,145,87,203,84,21.1,0,0,0
+"chest pain on exertion, never smoked, family history premature CAD",73,129,66,179,70,31.4,0,1,1
+"palpitations at night, on statin therapy, family history premature CAD",53,144,97,227,108,26.6,0,1,1
+"no current symptoms, high salt diet, father MI at 52",57,136,86,217,70,29.7,0,0,0
+"shortness of breath walking uphill, never smoked, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",54,130,84,170,143,30.7,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",36,124,77,223,70,25.6,0,0,0
+"palpitations at night, never smoked, no family history",39,127,78,175,78,23.2,0,0,0
+"no current symptoms, quit smoking 2y ago, family history premature CAD",55,141,56,200,94,24.4,0,0,0
+"shortness of breath walking uphill, never smoked, father MI at 52",73,91,79,194,95,25.3,1,0,0
+"palpitations at night, quit smoking 2y ago, father MI at 52",42,154,87,194,98,23.8,0,0,0
+"chest pain on exertion, high salt diet, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",47,90,87,225,126,26.2,0,0,0
+"no current symptoms, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",54,129,74,134,133,21.1,0,0,0
+"palpitations at night, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",35,126,57,242,160,25.5,1,0,0
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60",35,145,69,135,74,24.8,0,0,0
+"chest pain on exertion, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",50,136,78,241,132,28.7,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52",54,131,94,218,123,29.9,0,0,1
+"palpitations at night, smokes 1ppd, family history premature CAD",50,134,64,145,99,35.8,1,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD",73,149,81,211,73,33.0,1,1,1
+"shortness of breath walking uphill, high salt diet, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",53,174,87,187,167,30.8,1,1,1
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",59,139,87,156,137,27.7,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",74,95,80,241,70,28.0,0,0,0
+"palpitations at night, never smoked, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",75,124,53,238,145,29.4,0,0,1
+"chest pain on exertion, never smoked, no family history",36,140,87,212,119,26.7,1,1,1
+"chest pain on exertion, never smoked, father MI at 52",50,192,82,258,113,27.9,0,1,0
+"chest pain on exertion, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",69,118,86,204,127,23.9,1,0,0
+"shortness of breath walking uphill, never smoked, father MI at 52",38,125,71,189,92,29.5,1,1,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD",44,142,76,245,104,23.7,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history, diabetes suspected by glucose >= 126 mg/dL",39,138,96,173,131,25.6,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",39,108,80,227,78,25.3,0,0,0
+"no current symptoms, never smoked, mother stroke at 60",41,149,81,238,72,39.3,1,0,0
+"no current symptoms, on statin therapy, mother stroke at 60",57,108,74,207,70,28.3,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",70,127,94,203,126,32.2,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",73,156,64,216,80,22.2,0,0,0
+"palpitations at night, high salt diet, mother stroke at 60",55,108,76,208,97,30.4,1,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",31,126,85,175,94,26.5,0,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",54,162,81,120,121,32.0,1,0,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",51,127,90,181,115,26.0,0,0,0
+"chest pain on exertion, on statin therapy, family history premature CAD",59,113,85,148,85,22.6,0,0,0
+"no current symptoms, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",53,122,96,234,141,31.3,1,0,0
+"no current symptoms, quit smoking 2y ago, no family history",33,147,79,183,117,28.0,1,0,1
+"palpitations at night, smokes 1ppd, mother stroke at 60",60,104,80,208,115,21.9,0,0,0
+"chest pain on exertion, never smoked, mother stroke at 60",30,121,84,226,95,27.4,1,0,0
+"palpitations at night, high salt diet, family history premature CAD",47,106,63,236,97,23.5,1,0,0
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60",59,111,96,167,99,31.0,0,1,0
+"palpitations at night, quit smoking 2y ago, mother stroke at 60",59,155,72,276,106,28.2,0,1,0
+"no current symptoms, on statin therapy, mother stroke at 60",74,130,93,232,116,29.4,0,0,1
+"chest pain on exertion, on statin therapy, father MI at 52",27,124,96,222,117,23.5,1,0,0
+"chest pain on exertion, never smoked, mother stroke at 60",59,140,92,167,99,33.9,1,0,1
+"chest pain on exertion, high salt diet, no family history",63,119,84,271,102,25.2,0,1,1
+"chest pain on exertion, never smoked, no family history",51,110,75,223,123,29.2,0,1,0
+"chest pain on exertion, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",63,153,60,239,136,26.8,0,1,0
+"chest pain on exertion, quit smoking 2y ago, no family history, diabetes suspected by glucose >= 126 mg/dL",42,148,87,189,137,28.2,0,0,0
+"no current symptoms, high salt diet, mother stroke at 60",63,117,79,267,105,22.3,1,0,1
+"no current symptoms, quit smoking 2y ago, no family history",61,145,99,252,74,28.2,1,1,0
+"palpitations at night, quit smoking 2y ago, no family history",43,158,79,196,110,29.6,0,0,0
+"palpitations at night, high salt diet, no family history",47,141,88,270,110,22.1,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, father MI at 52",53,141,78,162,108,32.5,0,0,0
+"chest pain on exertion, high salt diet, father MI at 52",47,110,86,230,119,23.3,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60",68,130,78,222,93,25.3,0,0,1
+"chest pain on exertion, on statin therapy, father MI at 52",57,98,80,224,108,25.0,0,0,0
+"shortness of breath walking uphill, never smoked, no family history",71,152,63,174,70,33.1,0,1,1
+"no current symptoms, quit smoking 2y ago, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",69,129,74,186,150,25.5,0,0,0
+"no current symptoms, quit smoking 2y ago, father MI at 52",56,156,80,233,106,25.9,0,0,0
+"no current symptoms, high salt diet, father MI at 52",53,118,95,236,97,29.3,1,0,1
+"chest pain on exertion, never smoked, family history premature CAD",44,148,84,196,119,28.5,0,0,0
+"palpitations at night, quit smoking 2y ago, mother stroke at 60",45,103,69,189,99,33.0,0,0,0
+"palpitations at night, never smoked, mother stroke at 60",45,125,98,180,87,25.9,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",59,142,85,245,126,25.1,1,0,0
+"palpitations at night, quit smoking 2y ago, family history premature CAD",44,138,93,192,107,24.2,1,1,0
+"chest pain on exertion, never smoked, family history premature CAD",56,131,73,178,88,24.2,1,0,0
+"shortness of breath walking uphill, on statin therapy, no family history",57,102,50,130,123,31.0,1,1,0
+"chest pain on exertion, high salt diet, family history premature CAD",49,156,74,134,116,30.1,1,1,1
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",53,144,71,157,115,26.3,1,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",72,153,84,124,98,27.2,1,0,0
+"palpitations at night, high salt diet, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",74,152,66,182,132,17.8,0,0,1
+"palpitations at night, on statin therapy, no family history",46,125,73,185,83,31.6,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",53,139,68,160,126,29.8,1,1,0
+"palpitations at night, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",51,180,83,180,143,18.2,1,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",52,117,72,192,82,25.3,0,1,0
+"chest pain on exertion, on statin therapy, no family history",73,139,96,133,111,27.4,0,1,1
+"shortness of breath walking uphill, quit smoking 2y ago, father MI at 52",63,122,90,220,70,34.3,0,0,0
+"palpitations at night, high salt diet, mother stroke at 60",70,164,90,120,106,29.0,0,0,1
+"chest pain on exertion, high salt diet, family history premature CAD",76,135,80,264,70,33.4,1,0,0
+"shortness of breath walking uphill, never smoked, no family history",50,113,84,143,71,34.9,0,0,0
+"palpitations at night, high salt diet, father MI at 52",53,121,91,196,110,31.1,1,0,0
+"shortness of breath walking uphill, on statin therapy, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",55,106,73,182,132,23.5,0,1,0
+"no current symptoms, on statin therapy, no family history",67,91,95,208,118,21.8,0,1,0
+"no current symptoms, smokes 1ppd, family history premature CAD",54,90,81,168,99,26.5,0,0,0
+"chest pain on exertion, never smoked, family history premature CAD",63,119,95,214,85,31.3,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, no family history",69,111,105,139,105,29.8,1,0,0
+"no current symptoms, never smoked, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",69,135,98,222,166,22.0,0,1,1
+"chest pain on exertion, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",60,117,71,185,141,31.1,1,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",46,136,94,208,71,23.8,0,0,0
+"palpitations at night, never smoked, family history premature CAD",36,164,79,231,87,26.1,1,0,0
+"chest pain on exertion, never smoked, family history premature CAD",68,111,78,153,70,32.4,0,0,0
+"chest pain on exertion, on statin therapy, no family history",60,110,80,174,119,28.4,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",44,150,70,168,98,25.5,0,1,0
+"chest pain on exertion, smokes 1ppd, no family history",49,175,84,191,70,24.4,0,0,1
+"no current symptoms, quit smoking 2y ago, no family history",50,116,75,201,100,28.2,0,0,0
+"chest pain on exertion, on statin therapy, family history premature CAD",35,101,93,220,93,29.1,1,1,0
+"chest pain on exertion, on statin therapy, father MI at 52",58,127,85,202,78,27.2,0,0,1
+"shortness of breath walking uphill, never smoked, father MI at 52",46,125,56,189,96,24.4,0,0,0
+"palpitations at night, never smoked, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",51,145,72,214,127,30.0,0,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",64,113,72,231,81,31.7,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",54,127,75,229,96,22.8,0,0,1
+"palpitations at night, never smoked, mother stroke at 60",62,126,75,269,70,30.8,1,1,0
+"palpitations at night, never smoked, mother stroke at 60",60,103,84,173,94,25.1,0,0,0
+"chest pain on exertion, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",55,103,80,203,139,26.7,1,1,1
+"chest pain on exertion, on statin therapy, father MI at 52",56,140,71,147,119,32.2,1,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",77,142,86,170,87,22.3,0,0,0
+"shortness of breath walking uphill, never smoked, no family history",53,117,91,217,90,27.3,0,0,0
+"shortness of breath walking uphill, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",75,160,82,239,137,35.5,1,0,1
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",44,149,94,177,102,34.5,1,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",64,140,86,212,92,25.3,0,0,1
+"no current symptoms, smokes 1ppd, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",57,143,76,198,134,23.0,0,0,0
+"shortness of breath walking uphill, never smoked, father MI at 52",46,138,78,213,95,33.6,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",23,145,82,203,87,29.0,1,1,0
+"shortness of breath walking uphill, never smoked, father MI at 52",74,148,87,178,116,29.2,0,0,1
+"chest pain on exertion, never smoked, mother stroke at 60",41,133,84,120,73,20.9,0,0,0
+"shortness of breath walking uphill, high salt diet, family history premature CAD",43,94,92,142,95,28.4,1,1,1
+"no current symptoms, never smoked, father MI at 52",57,129,94,209,86,21.0,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",56,117,72,192,110,26.7,1,1,0
+"no current symptoms, smokes 1ppd, mother stroke at 60",58,110,70,269,103,36.2,1,0,0
+"shortness of breath walking uphill, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",52,143,81,197,153,33.5,1,0,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",37,99,86,227,124,35.1,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",65,147,91,153,107,28.2,0,0,0
+"chest pain on exertion, never smoked, family history premature CAD",44,120,88,146,121,29.7,0,0,0
+"shortness of breath walking uphill, high salt diet, no family history",58,109,88,202,101,26.2,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",62,116,72,254,113,37.0,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60",69,175,86,209,122,25.6,0,0,1
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",52,159,75,184,119,21.5,0,0,0
+"chest pain on exertion, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",51,127,86,209,143,25.8,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",52,151,91,217,121,32.7,0,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",33,164,75,211,89,25.5,0,0,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",46,116,79,196,114,28.8,0,0,0
+"shortness of breath walking uphill, high salt diet, mother stroke at 60",43,127,107,158,79,21.4,0,0,0
+"no current symptoms, never smoked, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",41,149,74,155,158,24.9,0,0,0
+"shortness of breath walking uphill, on statin therapy, no family history",57,139,77,177,70,21.9,0,0,0
+"palpitations at night, smokes 1ppd, no family history",51,125,71,191,104,22.7,0,0,0
+"palpitations at night, on statin therapy, mother stroke at 60",74,162,67,149,120,26.6,1,0,1
+"palpitations at night, on statin therapy, father MI at 52",73,141,92,251,83,30.4,1,0,1
+"shortness of breath walking uphill, high salt diet, no family history",32,146,75,216,96,36.5,0,0,0
+"chest pain on exertion, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",56,176,76,177,133,30.3,1,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",43,141,74,222,76,22.8,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",62,180,54,281,130,22.7,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",57,137,89,204,101,20.8,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",66,129,76,203,98,27.1,0,0,1
+"palpitations at night, smokes 1ppd, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",59,134,81,231,156,23.2,0,0,1
+"chest pain on exertion, never smoked, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",64,148,96,147,126,26.6,0,1,1
+"palpitations at night, never smoked, no family history",51,144,80,175,116,22.5,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",25,139,83,168,100,34.7,1,0,0
+"no current symptoms, high salt diet, family history premature CAD",41,105,84,222,111,26.3,0,1,0
+"no current symptoms, on statin therapy, no family history",45,112,95,136,102,31.0,0,0,0
+"palpitations at night, smokes 1ppd, no family history, diabetes suspected by glucose >= 126 mg/dL",49,127,68,207,153,26.3,1,0,1
+"chest pain on exertion, never smoked, father MI at 52",43,145,76,178,112,38.0,0,0,1
+"no current symptoms, on statin therapy, father MI at 52",75,158,60,185,88,21.2,0,0,0
+"palpitations at night, high salt diet, father MI at 52",53,90,82,176,94,30.2,1,1,1
+"no current symptoms, never smoked, no family history",71,129,88,247,117,34.1,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",51,123,78,165,79,27.8,1,0,0
+"chest pain on exertion, quit smoking 2y ago, father MI at 52",75,130,102,153,88,32.3,0,0,0
+"no current symptoms, quit smoking 2y ago, father MI at 52",41,136,92,206,70,27.8,0,1,0
+"no current symptoms, high salt diet, family history premature CAD",62,116,102,175,70,33.2,0,0,0
+"chest pain on exertion, quit smoking 2y ago, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",39,107,84,213,164,28.0,0,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD",60,150,100,193,101,36.1,0,0,0
+"shortness of breath walking uphill, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",74,146,77,196,152,21.0,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",35,124,86,197,121,31.7,0,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD",45,129,84,136,114,25.9,0,1,0
+"palpitations at night, never smoked, father MI at 52",58,119,78,124,79,26.3,0,1,0
+"chest pain on exertion, high salt diet, mother stroke at 60",53,106,99,266,106,30.8,0,1,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",39,144,96,154,111,25.3,0,0,0
+"palpitations at night, never smoked, family history premature CAD",69,119,75,213,84,25.1,0,0,0
+"no current symptoms, never smoked, family history premature CAD",56,111,89,155,125,30.8,0,0,0
+"palpitations at night, on statin therapy, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",71,121,83,192,138,23.1,0,0,0
+"chest pain on exertion, quit smoking 2y ago, mother stroke at 60",59,162,84,186,119,27.0,0,0,1
+"palpitations at night, smokes 1ppd, mother stroke at 60",41,140,89,246,113,32.9,0,1,0
+"palpitations at night, high salt diet, no family history",49,136,78,188,70,24.4,0,1,0
+"shortness of breath walking uphill, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",72,133,85,141,177,33.7,0,0,0
+"no current symptoms, never smoked, no family history, diabetes suspected by glucose >= 126 mg/dL",38,148,86,145,126,23.2,0,0,0
+"chest pain on exertion, never smoked, mother stroke at 60",49,145,77,205,78,29.2,0,0,0
+"no current symptoms, quit smoking 2y ago, no family history",62,108,78,225,78,28.5,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD",67,127,91,266,90,21.7,0,0,0
+"shortness of breath walking uphill, high salt diet, mother stroke at 60",65,120,83,270,82,31.6,0,1,1
+"palpitations at night, smokes 1ppd, mother stroke at 60",37,136,107,145,108,21.5,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",80,130,104,191,86,34.3,0,0,0
+"chest pain on exertion, quit smoking 2y ago, no family history",53,95,75,152,111,35.0,0,0,0
+"palpitations at night, quit smoking 2y ago, mother stroke at 60",55,153,86,205,96,25.0,0,0,1
+"shortness of breath walking uphill, high salt diet, mother stroke at 60",55,136,62,223,101,28.3,0,0,1
+"palpitations at night, high salt diet, family history premature CAD",52,100,76,131,77,27.1,0,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",43,153,73,225,112,21.3,0,0,0
+"palpitations at night, never smoked, father MI at 52",51,134,74,220,114,24.0,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52",71,140,60,186,87,27.6,1,0,1
+"chest pain on exertion, smokes 1ppd, family history premature CAD",39,132,85,174,70,27.8,0,0,0
+"chest pain on exertion, smokes 1ppd, mother stroke at 60",26,134,84,253,109,33.6,1,0,0
+"chest pain on exertion, high salt diet, family history premature CAD",61,122,74,190,70,25.7,1,0,0
+"no current symptoms, never smoked, father MI at 52",59,101,81,157,87,25.3,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",64,120,91,199,119,31.0,1,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",76,135,98,231,138,31.4,0,0,0
+"palpitations at night, high salt diet, family history premature CAD",46,132,69,219,100,26.8,1,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",57,143,98,126,115,28.9,0,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",61,129,65,147,139,25.3,1,1,0
+"palpitations at night, high salt diet, mother stroke at 60",70,90,74,180,80,27.2,0,1,0
+"palpitations at night, never smoked, father MI at 52",67,145,78,200,96,18.2,0,0,0
+"palpitations at night, on statin therapy, family history premature CAD",45,116,98,200,114,19.8,1,0,1
+"chest pain on exertion, high salt diet, no family history, diabetes suspected by glucose >= 126 mg/dL",38,106,88,151,140,31.8,0,0,0
+"no current symptoms, high salt diet, no family history",52,125,88,227,76,25.0,0,0,0
+"shortness of breath walking uphill, on statin therapy, no family history",36,106,98,211,76,22.9,1,1,0
+"no current symptoms, never smoked, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",68,137,84,139,131,30.2,0,0,0
+"chest pain on exertion, never smoked, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",50,114,77,161,137,37.4,0,0,0
+"palpitations at night, high salt diet, no family history",51,166,97,191,90,32.7,0,0,0
+"palpitations at night, quit smoking 2y ago, father MI at 52",44,126,80,141,108,29.9,0,0,0
+"palpitations at night, quit smoking 2y ago, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",73,121,69,196,130,28.0,0,1,1
+"chest pain on exertion, high salt diet, family history premature CAD",58,119,64,201,101,36.4,1,1,1
+"no current symptoms, high salt diet, family history premature CAD",50,91,84,179,70,36.0,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",62,115,101,215,111,29.2,0,1,0
+"chest pain on exertion, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",54,117,89,258,130,26.6,1,1,1
+"chest pain on exertion, never smoked, family history premature CAD",62,125,82,172,74,28.7,0,0,0
+"no current symptoms, never smoked, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",71,90,94,212,139,30.7,1,0,1
+"no current symptoms, high salt diet, no family history",52,131,67,179,98,27.5,0,1,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",61,154,86,249,70,25.9,1,1,1
+"palpitations at night, high salt diet, no family history",61,123,77,239,111,25.4,0,0,0
+"chest pain on exertion, smokes 1ppd, mother stroke at 60",69,130,96,195,70,21.5,1,0,0
+"chest pain on exertion, smokes 1ppd, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",62,139,73,173,140,26.9,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",55,116,90,223,118,29.3,0,0,0
+"palpitations at night, never smoked, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",47,123,84,193,150,22.0,0,0,0
+"palpitations at night, quit smoking 2y ago, no family history",59,148,82,152,70,24.0,0,0,0
+"palpitations at night, on statin therapy, family history premature CAD",42,134,89,160,109,32.4,0,1,1
+"chest pain on exertion, quit smoking 2y ago, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",63,108,81,189,142,24.2,0,1,0
+"chest pain on exertion, on statin therapy, no family history, diabetes suspected by glucose >= 126 mg/dL",56,98,96,271,136,29.6,0,0,0
+"palpitations at night, high salt diet, family history premature CAD",62,173,80,233,122,22.8,1,0,1
+"shortness of breath walking uphill, high salt diet, father MI at 52",49,139,60,244,115,18.9,0,0,0
+"no current symptoms, high salt diet, family history premature CAD",45,102,97,228,122,29.4,0,1,0
+"shortness of breath walking uphill, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",44,134,95,244,131,30.5,0,1,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",68,144,87,248,151,28.7,1,0,0
+"palpitations at night, high salt diet, family history premature CAD",52,134,96,156,70,27.4,0,1,1
+"shortness of breath walking uphill, smokes 1ppd, mother stroke at 60",52,97,89,217,80,34.2,0,0,1
+"chest pain on exertion, on statin therapy, no family history",34,165,74,217,91,26.2,0,1,1
+"no current symptoms, quit smoking 2y ago, mother stroke at 60",54,142,61,213,111,24.0,0,0,0
+"shortness of breath walking uphill, never smoked, father MI at 52",20,128,71,210,115,28.7,0,0,0
+"palpitations at night, smokes 1ppd, mother stroke at 60",71,144,79,120,96,32.3,1,0,0
+"chest pain on exertion, quit smoking 2y ago, no family history",52,127,87,202,103,29.1,1,1,1
+"chest pain on exertion, smokes 1ppd, mother stroke at 60",55,125,68,147,125,32.2,1,0,0
+"no current symptoms, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",38,148,73,229,136,34.5,0,0,0
+"no current symptoms, high salt diet, family history premature CAD",42,95,97,177,85,24.0,0,1,0
+"no current symptoms, high salt diet, family history premature CAD",62,150,75,185,99,27.0,0,0,0
+"no current symptoms, on statin therapy, family history premature CAD",52,139,75,193,107,26.4,1,0,1
+"chest pain on exertion, quit smoking 2y ago, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",60,146,72,123,168,30.2,0,0,0
+"shortness of breath walking uphill, on statin therapy, family history premature CAD",70,149,98,189,88,20.2,0,0,0
+"chest pain on exertion, never smoked, no family history",63,160,90,150,113,31.9,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",32,158,91,228,106,21.2,0,0,0
+"no current symptoms, quit smoking 2y ago, father MI at 52",43,148,99,176,94,29.2,0,1,0
+"palpitations at night, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",41,125,92,155,129,26.0,0,1,0
+"palpitations at night, high salt diet, no family history",44,145,95,238,103,25.4,1,0,0
+"no current symptoms, on statin therapy, no family history",30,123,86,184,93,30.0,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",30,115,91,161,107,21.9,0,0,0
+"no current symptoms, high salt diet, no family history",46,141,88,191,112,30.1,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60",48,139,89,188,89,26.0,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, no family history",61,154,70,203,86,21.3,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",51,93,80,160,133,31.9,0,0,0
+"palpitations at night, smokes 1ppd, father MI at 52",72,143,78,232,90,21.9,0,0,0
+"palpitations at night, high salt diet, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",33,145,75,206,128,30.2,0,1,0
+"shortness of breath walking uphill, never smoked, mother stroke at 60",38,135,81,252,100,25.6,0,0,1
+"shortness of breath walking uphill, on statin therapy, mother stroke at 60",58,160,100,215,83,25.7,0,0,1
+"palpitations at night, smokes 1ppd, father MI at 52",52,117,91,161,76,33.6,1,0,1
+"palpitations at night, smokes 1ppd, no family history",43,139,83,232,70,28.7,1,1,0
+"chest pain on exertion, smokes 1ppd, father MI at 52",64,126,85,186,121,26.4,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",68,132,96,199,120,31.4,1,1,1
+"shortness of breath walking uphill, on statin therapy, mother stroke at 60",71,115,70,120,93,25.3,1,1,0
+"no current symptoms, quit smoking 2y ago, no family history",50,130,86,151,76,34.6,0,0,0
+"chest pain on exertion, quit smoking 2y ago, no family history",55,145,99,243,89,24.6,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, no family history",58,135,100,234,107,29.8,1,0,1
+"shortness of breath walking uphill, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",56,139,91,133,135,24.8,0,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",67,119,87,207,86,30.6,0,1,0
+"no current symptoms, never smoked, mother stroke at 60",49,162,64,207,70,23.5,1,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",59,120,75,239,108,27.0,1,0,1
+"chest pain on exertion, on statin therapy, family history premature CAD",28,133,81,157,93,30.6,0,1,0
+"shortness of breath walking uphill, never smoked, mother stroke at 60",64,143,86,134,81,21.5,0,1,1
+"shortness of breath walking uphill, on statin therapy, mother stroke at 60",75,129,86,206,70,26.5,0,0,0
+"chest pain on exertion, on statin therapy, no family history",55,147,59,172,117,29.2,0,1,1
+"no current symptoms, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",67,136,76,175,138,25.1,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, family history premature CAD",35,164,85,164,76,25.7,1,0,0
+"shortness of breath walking uphill, high salt diet, no family history",51,143,74,239,70,30.4,0,0,0
+"palpitations at night, on statin therapy, family history premature CAD",36,140,79,165,88,31.2,1,0,0
+"shortness of breath walking uphill, high salt diet, no family history",59,118,87,229,94,20.2,1,1,0
+"no current symptoms, quit smoking 2y ago, family history premature CAD",61,141,85,217,115,23.3,0,0,1
+"shortness of breath walking uphill, quit smoking 2y ago, father MI at 52",39,151,84,172,104,15.4,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52",45,140,89,230,70,26.9,1,0,0
+"chest pain on exertion, on statin therapy, father MI at 52",48,116,93,240,108,29.9,0,0,1
+"chest pain on exertion, never smoked, no family history",84,123,79,208,109,23.2,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",54,128,71,187,88,21.6,0,0,0
+"no current symptoms, on statin therapy, family history premature CAD",56,133,75,222,109,29.0,0,0,0
+"palpitations at night, quit smoking 2y ago, father MI at 52",59,107,77,169,70,24.7,0,0,0
+"chest pain on exertion, quit smoking 2y ago, mother stroke at 60",59,167,81,213,92,36.3,1,1,0
+"palpitations at night, high salt diet, family history premature CAD",52,131,67,249,70,33.7,0,0,0
+"shortness of breath walking uphill, quit smoking 2y ago, father MI at 52",39,135,74,148,101,18.7,1,0,1
+"chest pain on exertion, on statin therapy, mother stroke at 60",47,125,79,132,120,30.1,1,0,0
+"no current symptoms, on statin therapy, no family history",75,132,95,221,70,30.0,0,1,1
+"shortness of breath walking uphill, never smoked, family history premature CAD",58,167,87,165,102,30.3,0,0,0
+"chest pain on exertion, on statin therapy, mother stroke at 60",51,115,80,180,119,26.9,0,0,0
+"shortness of breath walking uphill, high salt diet, family history premature CAD",39,123,91,201,107,20.5,0,1,0
+"palpitations at night, high salt diet, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",54,114,84,174,142,27.5,0,0,0
+"shortness of breath walking uphill, smokes 1ppd, family history premature CAD",55,122,84,200,99,24.6,0,1,1
+"no current symptoms, smokes 1ppd, family history premature CAD, diabetes suspected by glucose >= 126 mg/dL",47,160,93,161,156,35.0,0,1,1
+"shortness of breath walking uphill, on statin therapy, family history premature CAD",66,121,85,177,104,29.6,0,0,0
+"chest pain on exertion, on statin therapy, family history premature CAD",48,124,83,192,71,32.7,0,0,0
+"chest pain on exertion, quit smoking 2y ago, family history premature CAD",53,99,89,215,98,22.3,1,0,0
+"palpitations at night, never smoked, family history premature CAD",65,126,76,181,84,27.0,1,1,1
+"shortness of breath walking uphill, quit smoking 2y ago, mother stroke at 60, diabetes suspected by glucose >= 126 mg/dL",58,136,82,207,132,26.0,0,0,0
+"no current symptoms, smokes 1ppd, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",68,123,61,217,143,23.0,1,1,1
+"no current symptoms, on statin therapy, father MI at 52, diabetes suspected by glucose >= 126 mg/dL",52,125,78,213,145,24.9,0,0,0
+"palpitations at night, high salt diet, father MI at 52",50,147,97,192,122,19.9,0,0,0
+"shortness of breath walking uphill, never smoked, family history premature CAD",61,142,78,241,99,27.4,1,1,0
+"no current symptoms, never smoked, father MI at 52",58,130,82,168,88,22.7,0,0,0
+"palpitations at night, quit smoking 2y ago, family history premature CAD",69,118,78,232,74,27.3,0,0,1
+"palpitations at night, high salt diet, mother stroke at 60",60,105,72,230,120,28.5,0,0,1
+"no current symptoms, never smoked, father MI at 52",55,163,87,227,71,25.5,0,0,1
+"chest pain on exertion, quit smoking 2y ago, no family history",60,104,82,178,96,23.5,1,0,0
+"no current symptoms, smokes 1ppd, no family history",63,144,93,229,108,30.3,0,0,0
+"palpitations at night, high salt diet, mother stroke at 60",42,129,73,213,114,30.2,0,1,0
+"chest pain on exertion, high salt diet, family history premature CAD",53,119,82,156,70,24.4,0,0,0
+"shortness of breath walking uphill, high salt diet, father MI at 52",51,148,79,185,71,31.3,0,1,0
