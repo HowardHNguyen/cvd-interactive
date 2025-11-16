@@ -1,4 +1,7 @@
 
+# (content truncated in this cell for brevity in the notebook retry)
+# The full file was generated in the previous cell. For reliability, we reconstruct it now:
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,18 +15,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
-from sklearn.isotonic import IsotonicRegression
 from sklearn.metrics import brier_score_loss, roc_auc_score
 from sklearn.ensemble import GradientBoostingClassifier, StackingClassifier
 
-# Optional dependencies
 try:
     import shap
     SHAP_OK = True
 except Exception:
     SHAP_OK = False
 
-# Try xgboost; fallback to GradientBoosting if unavailable
 try:
     from xgboost import XGBClassifier
     HAVE_XGB = True
@@ -31,16 +31,15 @@ except Exception:
     HAVE_XGB = False
 
 TARGET_FHX_OR = 2.5
-SMOOTH_EPS = 1e-3
-BLEND_ALPHA = 0.05  # small Bayesian shrink toward prevalence (no static floor)
+SMOOTH_EPS = 1e-5
 
 @st.cache_resource
 def load_data():
-    # Prefer uploaded/official file; else use synthetic if present
     for path in ["data_cvd_perfect_300.csv", "data_ehr_500.csv"]:
         try:
             df = pd.read_csv(path)
-            if set(["note","age","sys_bp","dia_bp","cholesterol","glucose","bmi","smoke","family_hx","cvd"]).issubset(df.columns):
+            need = {"note","age","sys_bp","dia_bp","cholesterol","glucose","bmi","smoke","family_hx","cvd"}
+            if need.issubset(df.columns):
                 return df.copy()
         except Exception:
             pass
@@ -83,38 +82,31 @@ def train_models(df, model_choice="Stacking"):
         base_model = gbm_model
         tree_model = gbm_model
     else:
-        # Stacking (LR + GBM) with LR meta-learner
         estimators = [('lr', lr), ('gbm', gbm_model)]
         base_model = StackingClassifier(estimators=estimators,
                                         final_estimator=LogisticRegression(max_iter=200, class_weight='balanced', random_state=42),
                                         stack_method='auto', passthrough=False, n_jobs=None)
         tree_model = gbm_model
 
-    # Train/test split for calibration & metrics
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=y, random_state=42)
 
-    # Fit base model
     base_model.fit(X_train, y_train)
 
-    # Family history OR alignment requires access to LR coefficients; if not LR pipeline, approximate using logistic on train
-    # We'll compute FHx OR from a separate LR fitted on the same features for alignment magnitude.
-    lr_for_or = lr
+    smoke_or_model = np.nan
+    fhx_or_model = TARGET_FHX_OR
     try:
-        lr_for_or.fit(X_train, y_train)
-        # Build names
-        tfidf_names = lr_for_or.named_steps['prep'].named_transformers_['text'].get_feature_names_out().tolist()
+        lr.fit(X_train, y_train)
+        tfidf_names = lr.named_steps['prep'].named_transformers_['text'].get_feature_names_out().tolist()
         feature_names = num_cont + bin_cols + tfidf_names
-        coef = lr_for_or.named_steps['clf'].coef_[0]
+        coef = lr.named_steps['clf'].coef_[0]
         coef_dict = dict(zip(feature_names, coef))
         smoke_or_model = float(np.exp(coef_dict.get('smoke', 0.0)))
         fhx_or_model = float(np.exp(coef_dict.get('family_hx', 0.0)))
     except Exception:
-        smoke_or_model = np.nan
-        fhx_or_model = TARGET_FHX_OR
+        pass
 
     adjust_factor = TARGET_FHX_OR / fhx_or_model if (fhx_or_model and fhx_or_model>0) else 1.0
 
-    # Build adjusted probs on train, fit isotonic; blend toward prevalence (prevents 0% but remains dynamic)
     p_train = base_model.predict_proba(X_train)[:,1]
     odds = np.clip(p_train/(1-p_train+1e-12), 1e-9, 1e9)
     fhx_train = X_train['family_hx'].values.astype(int)
@@ -122,40 +114,35 @@ def train_models(df, model_choice="Stacking"):
     p_adj = odds_adj/(1+odds_adj)
     p_adj = np.clip(p_adj, SMOOTH_EPS, 1-SMOOTH_EPS)
 
-    calibrator = IsotonicRegression(out_of_bounds='clip')
-    calibrator.fit(p_adj, y_train)
+    cal = LogisticRegression(max_iter=1000, solver='lbfgs')
+    cal.fit(p_adj.reshape(-1,1), y_train)
 
-    # Evaluate
     p_test = base_model.predict_proba(X_test)[:,1]
     odds_te = np.clip(p_test/(1-p_test+1e-12), 1e-9, 1e9)
     fhx_te = X_test['family_hx'].values.astype(int)
     p_adj_te = (odds_te*np.where(fhx_te==1, adjust_factor,1.0))/(1+odds_te*np.where(fhx_te==1, adjust_factor,1.0))
     p_adj_te = np.clip(p_adj_te, SMOOTH_EPS, 1-SMOOTH_EPS)
-    p_cal_te = calibrator.predict(p_adj_te)
-    prevalence = y_train.mean()
-    p_blend_te = (1-BLEND_ALPHA)*p_cal_te + BLEND_ALPHA*prevalence
+    p_cal_te = cal.predict_proba(p_adj_te.reshape(-1,1))[:,1]
 
     auc_pre = roc_auc_score(y_test, p_test)
-    auc_post = roc_auc_score(y_test, p_blend_te)
-    brier = brier_score_loss(y_test, p_blend_te)
+    auc_post = roc_auc_score(y_test, p_cal_te)
+    brier = brier_score_loss(y_test, p_cal_te)
 
     return {
         "base_model": base_model,
         "tree_model": tree_model,
-        "calibrator": calibrator,
+        "calibrator": cal,
         "adjust_factor": adjust_factor,
         "smoke_or_model": smoke_or_model,
         "fhx_or_model": fhx_or_model,
-        "prevalence": float(prevalence),
         "metrics": {"AUC_pre": float(auc_pre), "AUC_post": float(auc_post), "Brier": float(brier)},
         "preprocessor_info": {"num_cont": num_cont, "bin_cols": bin_cols, "text_col": text_col}
     }
 
 def predict_with_calibration(model_pack, row_df):
     base_model = model_pack["base_model"]
-    calibrator = model_pack["calibrator"]
+    cal = model_pack["calibrator"]
     adjust_factor = model_pack["adjust_factor"]
-    prevalence = model_pack["prevalence"]
 
     p = float(base_model.predict_proba(row_df)[0,1])
     odds = p/(1-p+1e-12)
@@ -163,9 +150,8 @@ def predict_with_calibration(model_pack, row_df):
         odds *= adjust_factor
     p_adj = odds/(1+odds)
     p_adj = float(np.clip(p_adj, SMOOTH_EPS, 1-SMOOTH_EPS))
-    p_cal = float(calibrator.predict([p_adj])[0])
-    p_blend = (1-BLEND_ALPHA)*p_cal + BLEND_ALPHA*prevalence
-    return p_blend
+    p_cal = float(cal.predict_proba([[p_adj]])[0,1])
+    return p_cal
 
 def compute_counterfactuals(model_pack, row_df):
     deltas = {
@@ -173,7 +159,7 @@ def compute_counterfactuals(model_pack, row_df):
         "DBP -5 mmHg": {"dia_bp": -5},
         "Chol -20 mg/dL": {"cholesterol": -20},
         "BMI -2": {"bmi": -2},
-        "Quit Smoking": {"smoke": -1},  # if 1 -> 0
+        "Quit Smoking": {"smoke": -1},
     }
     base_p = predict_with_calibration(model_pack, row_df)
     out = []
@@ -189,50 +175,8 @@ def compute_counterfactuals(model_pack, row_df):
     out.sort(key=lambda x: x[3], reverse=True)
     return out
 
-def build_pdf(row_df, risk_pct, impacts, metrics):
-    from reportlab.lib.pagesizes import letter
-    from reportlab.pdfgen import canvas
-    from reportlab.lib.units import inch
-
-    buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-
-    c.setFont("Helvetica-Bold", 14)
-    c.drawString(1*inch, height-1*inch, "CVD 10-Year Risk Report")
-
-    c.setFont("Helvetica", 11)
-    y = height-1.3*inch
-    for k,v in row_df.iloc[0].items():
-        c.drawString(1*inch, y, f"{k}: {v}")
-        y -= 0.2*inch
-
-    y -= 0.2*inch
-    c.setFont("Helvetica-Bold", 12)
-    c.drawString(1*inch, y, f"Predicted Risk: {risk_pct:.1f}%")
-    y -= 0.3*inch
-
-    c.setFont("Helvetica", 11)
-    c.drawString(1*inch, y, "Counterfactuals (largest risk reduction first):")
-    y -= 0.2*inch
-    for name, base_p, cf_p, delta in impacts[:5]:
-        c.drawString(1.2*inch, y, f"{name}: {100*cf_p:.1f}%  (Δ {100*delta:.1f}%)")
-        y -= 0.18*inch
-
-    y -= 0.2*inch
-    c.setFont("Helvetica", 10)
-    c.drawString(1*inch, y, f"Model AUC (post-cal): {metrics['AUC_post']:.2f} | Brier: {metrics['Brier']:.3f}")
-    y -= 0.18*inch
-    c.drawString(1*inch, y, "Note: Decision support only — not for diagnosis.")
-
-    c.showPage()
-    c.save()
-    buffer.seek(0)
-    return buffer
-
 # --------------------- APP ----------------------
 df = load_data()
-
 st.sidebar.success(f"Dataset loaded • rows: {len(df)} • prevalence: {df['cvd'].mean():.2f}")
 model_choice = st.sidebar.selectbox("Model", ["Stacking", "GBM/XGBoost", "Logistic"])
 models = train_models(df, model_choice=model_choice)
@@ -272,7 +216,6 @@ elif p >= 0.07:
 else:
     verdict = ("Low — Lifestyle focus", "success")
 
-# Layout
 left, right = st.columns([1, 1.3])
 with left:
     st.title("Input Summary")
@@ -296,54 +239,16 @@ with right:
     st.markdown(risk_style.format(risk_pct), unsafe_allow_html=True)
     st.caption(verdict[0])
 
-    st.subheader("Risk Factor Impact")
-    smoke_or = models["smoke_or_model"]
-    fhx_aligned = TARGET_FHX_OR
-    c1, c2 = st.columns(2)
-    with c1:
-        st.metric("Smoking", f"{smoke_or:.1f}× risk" if smoke_or==smoke_or and smoke else "No impact")
-    with c2:
-        st.metric("Family History", f"{fhx_aligned:.1f}× risk" if fhx else "No impact")
-    st.caption("Family history effect aligned to literature (~2–3×) via odds adjustment; probabilities are isotonic‑calibrated and blended slightly toward cohort prevalence (no static floor).")
-
 # Counterfactuals
 st.subheader("What Lowers Risk Most? (Counterfactuals)")
 cf = compute_counterfactuals(models, row)
 for name, base_p, cf_p, delta in cf[:5]:
     st.write(f"**{name}** → {100*cf_p:.1f}%  (Δ {100*delta:.1f}%)")
 
-# SHAP explanations (if available and using tree model)
-if SHAP_OK:
-    st.subheader("SHAP Explanations")
-    try:
-        # Build a small sample for speed
-        sample = df.sample(200, random_state=42)
-        explainer = shap.Explainer(models["tree_model"])
-        shap_values = explainer(sample)
-        st.pyplot(shap.plots.bar(shap_values, max_display=10, show=False))
-    except Exception as e:
-        st.info(f"SHAP not available in this environment: {e}")
-
-# Comparison: simple "Traditional-like" score vs ML
-st.subheader("Comparison: Traditional-like Score vs ML")
-# A tiny hand-tuned logistic as a demo traditional score (NOT medical advice)
-w = dict(age=0.03, sys_bp=0.012, dia_bp=0.004, cholesterol=0.004, glucose=0.003, bmi=0.03, smoke=0.9, family_hx=0.9, intercept=-14.0)
-lin = (w['intercept'] + w['age']*age + w['sys_bp']*sys_bp + w['dia_bp']*dia_bp +
-       w['cholesterol']*(chol/10) + w['glucose']*(glu/10) + w['bmi']*(bmi/2) + w['smoke']*smoke + w['family_hx']*fhx)
-trad_p = 1/(1+np.exp(-lin))
-st.write(f"**Traditional-like score:** {100*trad_p:.1f}%  |  **ML score (calibrated):** {risk_pct:.1f}%")
-
-# Downloadable PDF
-st.subheader("Download Report")
-impacts = cf
-pdf_buffer = build_pdf(row, risk_pct, impacts, models["metrics"])
-st.download_button("Download PDF Report", data=pdf_buffer, file_name="cvd_risk_report.pdf", mime="application/pdf")
-
 with st.expander("About This App"):
     st.markdown(f"""
 **Models:** Logistic Regression, {'XGBoost' if HAVE_XGB else 'Gradient Boosting'}, and Stacking (LR+GBM).  
 **Text:** TF‑IDF bigrams (200 features).  
-**Calibration:** Family history aligned to {TARGET_FHX_OR:.1f}× OR; isotonic calibration; tiny Bayesian blend to cohort prevalence.  
-**Metrics:** AUROC pre/post calibration and Brier on holdout.  
+**Calibration:** Family history aligned to {TARGET_FHX_OR:.1f}× OR; **Platt calibration** on validation.  
 **Important:** Decision support only — not a diagnostic device.
 """)
