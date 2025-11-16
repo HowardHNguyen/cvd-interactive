@@ -164,19 +164,11 @@ with col2:
         
         col_a, col_b = st.columns(2)
         with col_a:
-            st.metric(
-                "Smoking",
-                f"{smoke_impact:.1f}× risk" if smoke else "No impact",
-                delta=None
-            )
+            st.metric("Smoking", f"{smoke_impact:.1f}× risk" if smoke else "No impact")
         with col_b:
-            st.metric(
-                "Family History",
-                f"{fhx_impact:.1f}× risk" if family_hx else "No impact",
-                delta=None
-            )
+            st.metric("Family History", f"{fhx_impact:.1f}× risk" if family_hx else "No impact")
 
-        st.caption("Based on model coefficients. Real-world: Smoking ~3×, Family Hx ~2×")
+        st.caption(f"Model: Smoking {smoke_impact:.1f}× | Family Hx {fhx_impact:.1f}× | Real-world: ~3× and ~2×")
 
     except Exception as e:
         st.error(f"Prediction error: {e}")
