@@ -23,20 +23,20 @@ Uses nitro rarely for chest pressure,72,148,90,215,112,27.2,0,1,1
 "Echo normal, plays tennis weekly",37,116,74,162,85,22.5,0,0,0
 BP well controlled on ACE inhibitor,58,130,82,190,100,28.5,0,0,0
 "Family history of early heart attack, labs normal",49,125,80,185,98,25.8,0,1,1
-"Surgery 5 years ago, walks 5km daily",74,138,84,198,105,27.0,0,1,1
-"No risk factors, BMI 21, active",32,112,72,155,82,21.0,0,0,0
+"Surgery 5 years ago, walks 5km daily",74,138,84,198,105,27,0,1,1
+"No risk factors, BMI 21, active",32,112,72,155,82,21,0,0,0
 "Diabetic, no neuropathy, A1C 7.1%",61,135,86,210,165,31.8,0,0,1
-"Plays tennis 3x/week, feels strong",43,116,74,165,88,23.0,0,0,0
+"Plays tennis 3x/week, feels strong",43,116,74,165,88,23,0,0,0
 On cilostazol for leg cramps when walking,69,152,90,228,118,29.8,1,1,1
 "Lipids normal, no meds",45,118,76,168,90,23.8,0,0,0
 "Stable on diuretic, weight steady",76,148,88,218,120,28.6,0,1,1
 "Healthy volunteer, no issues",34,110,70,152,80,20.5,0,0,0
 "Recent TIA, on aspirin, no residuals",67,150,90,220,112,28.5,0,1,1
-"Overweight, sedentary job, no symptoms",51,140,86,205,108,30.0,0,0,0
+"Overweight, sedentary job, no symptoms",51,140,86,205,108,30,0,0,0
 "On beta blocker, BP and HR controlled",70,140,86,210,110,27.8,0,1,1
 "Stress ECG normal, active lifestyle",40,116,74,165,85,23.2,0,0,0
-"Trying to quit smoking, down to 5 cigs/day",63,145,88,215,105,29.0,1,0,1
-"Vegetarian, BMI 23, runs marathons",46,118,76,160,85,23.0,0,0,0
+"Trying to quit smoking, down to 5 cigs/day",63,145,88,215,105,29,1,0,1
+"Vegetarian, BMI 23, runs marathons",46,118,76,160,85,23,0,0,0
 "Transplant 3 years ago, stable on meds",57,128,80,188,100,26.2,0,1,1
 "No family history, healthy weight",36,112,72,158,82,21.5,0,0,0
 "CKD stage 3, on statin, creatinine stable",70,155,92,235,130,31.2,0,1,1
@@ -47,362 +47,267 @@ On cilostazol for leg cramps when walking,69,152,90,228,118,29.8,1,1,1
 "Normal weight, active, no meds",42,116,74,165,88,23.5,0,0,0
 "Leg pain after walking 2 blocks, rests and resolves",68,155,92,230,118,30.5,1,1,1
 "Enzymes normal, no chest pain",38,114,72,160,85,22.2,0,0,0
-"HTN on two meds, BP 135/85 at home",62,145,88,210,108,28.0,0,0,0
+"HTN on two meds, BP 135/85 at home",62,145,88,210,108,28,0,0,0
 "Family history of MI at 55, started statin",53,130,82,195,102,26.8,0,1,1
 "Surgery 5 years ago, doing well",75,138,84,200,105,27.2,0,1,1
 "No risks, BMI 20.8, active",35,110,70,152,80,20.8,0,0,0
 "Smoking 1 ppd, wants to quit",59,142,86,212,112,29.5,1,0,1
 "Lipids normal, no meds",44,116,74,162,85,22.8,0,0,0
-"On entresto, feels much better",71,145,88,215,115,28.0,0,1,1
-"Healthy, no meds, active",29,108,68,150,80,20.0,0,0,0
-"Recent event, recovering well",66,150,90,225,118,29.0,1,1,1
+"On entresto, feels much better",71,145,88,215,115,28,0,1,1
+"Healthy, no meds, active",29,108,68,150,80,20,0,0,0
+"Recent event, recovering well",66,150,90,225,118,29,1,1,1
 "BMI 24.2, active, no issues",47,118,76,168,88,24.2,0,0,0
 "On beta blocker, stable",70,145,88,218,110,27.8,0,1,1
 "Low risk, normal labs",49,120,78,170,90,24.5,0,0,0
-"Smoker, high cholesterol, started statin",65,155,92,235,125,31.0,1,1,1
+"Smoker, high cholesterol, started statin",65,155,92,235,125,31,1,1,1
 "Echo normal, active",40,114,72,160,85,22.5,0,0,0
 "HTN controlled, no symptoms",57,132,82,190,100,27.5,0,0,0
 "Strong family history, started aspirin",51,125,80,182,95,25.8,0,1,1
 "Post event, on dual therapy",61,135,84,202,105,27.2,0,1,1
-"No risks, active",33,110,70,155,82,21.0,0,0,0
+"No risks, active",33,110,70,155,82,21,0,0,0
 "Diabetic, A1C 7.0%",60,138,86,210,160,31.5,0,0,1
-"Active, no issues",45,116,74,162,88,23.0,0,0,0
+"Active, no issues",45,116,74,162,88,23,0,0,0
 "Leg pain on exertion, on cilostazol",71,152,90,228,115,29.5,1,1,1
 Lipids normal,41,114,72,158,85,22.5,0,0,0
 Stable on diuretic,77,148,88,218,120,28.8,0,1,1
 "Healthy, active",32,108,68,150,80,20.2,0,0,0
-"Recent TIA, on aspirin",69,150,90,222,112,29.0,0,1,1
-"Overweight, no symptoms",55,140,86,218,110,33.0,0,0,0
+"Recent TIA, on aspirin",69,150,90,222,112,29,0,1,1
+"Overweight, no symptoms",55,140,86,218,110,33,0,0,0
 Stable on beta blocker,73,142,84,208,108,27.5,0,1,1
 Stress test normal,42,116,74,165,85,23.5,0,0,0
 "Smoking, trying to quit",64,145,88,215,108,29.2,1,0,1
-"Vegetarian, fit",48,118,76,168,88,24.0,0,0,0
+"Vegetarian, fit",48,118,76,168,88,24,0,0,0
 "Transplant, stable",56,130,80,192,102,26.5,0,1,1
 "No history, healthy",37,112,72,158,82,21.8,0,0,0
 "CKD, on statin",72,155,92,235,130,31.5,0,1,1
-CT normal,52,122,78,172,90,25.0,0,0,0
+CT normal,52,122,78,172,90,25,0,0,0
 "AFib, rate controlled",74,142,84,205,108,27.8,0,1,1
-"Runner, healthy",30,106,66,148,78,19.0,0,0,0
+"Runner, healthy",30,106,66,148,78,19,0,0,0
 Recovered,67,148,88,218,115,28.8,0,1,1
 Normal exam,43,116,74,165,88,23.8,0,0,0
 Leg pain on walking,70,155,92,230,118,30.8,1,1,1
 Normal labs,39,114,72,160,85,22.2,0,0,0
 HTN controlled,63,148,90,212,108,28.5,0,0,0
-Family history,54,130,82,195,102,27.0,0,1,1
+Family history,54,130,82,195,102,27,0,1,1
 Surgery years ago,76,138,84,200,105,27.5,0,1,1
 No risks,34,110,70,152,80,20.5,0,0,0
 Smoking,60,142,86,212,112,29.8,1,0,1
 Normal,46,116,74,162,85,22.8,0,0,0
-Stable on meds,77,145,88,215,115,28.0,0,1,1
-Healthy,28,108,68,148,78,20.0,0,0,0
+Stable on meds,77,145,88,215,115,28,0,1,1
+Healthy,28,108,68,148,78,20,0,0,0
 Recent event,67,150,90,225,118,29.2,1,1,1
 BMI ok,49,118,76,168,88,24.2,0,0,0
 Stable,71,145,88,218,110,27.8,0,1,1
 Low risk,50,120,78,170,90,24.5,0,0,0
-"Smoker, high lipids",66,155,92,235,125,31.0,1,1,1
+"Smoker, high lipids",66,155,92,235,125,31,1,1,1
 Normal,41,114,72,160,85,22.5,0,0,0
 Controlled,58,132,82,190,100,27.5,0,0,0
 Family,52,125,80,182,95,25.8,0,1,1
 Post,62,135,84,202,105,27.2,0,1,1
-No,35,110,70,155,82,21.0,0,0,0
+No,35,110,70,155,82,21,0,0,0
 Diabetic,61,138,86,210,160,31.5,0,0,1
-Active,46,116,74,162,88,23.0,0,0,0
+Active,46,116,74,162,88,23,0,0,0
 Leg,72,152,90,228,115,29.5,1,1,1
 Normal,42,114,72,158,85,22.5,0,0,0
 Stable,78,148,88,218,120,28.8,0,1,1
 Healthy,33,108,68,150,80,20.2,0,0,0
-TIA,70,150,90,222,112,29.0,0,1,1
-Overweight,56,140,86,218,110,33.0,0,0,0
+TIA,70,150,90,222,112,29,0,1,1
+Overweight,56,140,86,218,110,33,0,0,0
 Stable,74,142,84,208,108,27.5,0,1,1
 Normal,43,116,74,165,85,23.5,0,0,0
 Smoking,65,145,88,215,108,29.2,1,0,1
-Fit,49,118,76,168,88,24.0,0,0,0
+Fit,49,118,76,168,88,24,0,0,0
 Stable,57,130,80,192,102,26.5,0,1,1
 No,38,112,72,158,82,21.8,0,0,0
 CKD,73,155,92,235,130,31.5,0,1,1
-Normal,53,122,78,172,90,25.0,0,0,0
+Normal,53,122,78,172,90,25,0,0,0
 AFib,75,142,84,205,108,27.8,0,1,1
-Runner,31,106,66,148,78,19.0,0,0,0
+Runner,31,106,66,148,78,19,0,0,0
 Recovered,68,148,88,218,115,28.8,0,1,1
 Normal,44,116,74,165,88,23.8,0,0,0
 Leg pain,71,155,92,230,118,30.8,1,1,1
 Normal,40,114,72,160,85,22.2,0,0,0
 HTN,64,148,90,212,108,28.5,0,0,0
-Family,55,130,82,195,102,27.0,0,1,1
+Family,55,130,82,195,102,27,0,1,1
 Surgery,77,138,84,200,105,27.5,0,1,1
 No,36,110,70,152,80,20.5,0,0,0
 Smoking,61,142,86,212,112,29.8,1,0,1
 Normal,47,116,74,162,85,22.8,0,0,0
-Stable,78,145,88,215,115,28.0,0,1,1
-Healthy,29,108,68,148,78,20.0,0,0,0
+Stable,78,145,88,215,115,28,0,1,1
+Healthy,29,108,68,148,78,20,0,0,0
 Recent,68,150,90,225,118,29.2,1,1,1
 BMI ok,50,118,76,168,88,24.2,0,0,0
 Stable,72,145,88,218,110,27.8,0,1,1
 Low risk,51,120,78,170,90,24.5,0,0,0
-"Smoker, high lipids",67,155,92,235,125,31.0,1,1,1
+"Smoker, high lipids",67,155,92,235,125,31,1,1,1
 Normal,42,114,72,160,85,22.5,0,0,0
 Controlled,59,132,82,190,100,27.5,0,0,0
 Family,53,125,80,182,95,25.8,0,1,1
 Post,63,135,84,202,105,27.2,0,1,1
-No,37,110,70,155,82,21.0,0,0,0
+No,37,110,70,155,82,21,0,0,0
 Diabetic,62,138,86,210,160,31.5,0,0,1
-Active,47,116,74,162,88,23.0,0,0,0
+Active,47,116,74,162,88,23,0,0,0
 Leg,73,152,90,228,115,29.5,1,1,1
 Normal,43,114,72,158,85,22.5,0,0,0
 Stable,79,148,88,218,120,28.8,0,1,1
 Healthy,34,108,68,150,80,20.2,0,0,0
-TIA,71,150,90,222,112,29.0,0,1,1
-Overweight,57,140,86,218,110,33.0,0,0,0
+TIA,71,150,90,222,112,29,0,1,1
+Overweight,57,140,86,218,110,33,0,0,0
 Stable,75,142,84,208,108,27.5,0,1,1
 Normal,44,116,74,165,85,23.5,0,0,0
 Smoking,66,145,88,215,108,29.2,1,0,1
-Fit,50,118,76,168,88,24.0,0,0,0
+Fit,50,118,76,168,88,24,0,0,0
 Stable,58,130,80,192,102,26.5,0,1,1
 No,39,112,72,158,82,21.8,0,0,0
 CKD,74,155,92,235,130,31.5,0,1,1
-Normal,54,122,78,172,90,25.0,0,0,0
+Normal,54,122,78,172,90,25,0,0,0
 AFib,76,142,84,205,108,27.8,0,1,1
-Runner,32,106,66,148,78,19.0,0,0,0
+Runner,32,106,66,148,78,19,0,0,0
 Recovered,69,148,88,218,115,28.8,0,1,1
 Normal,45,116,74,165,88,23.8,0,0,0
 Leg pain,72,155,92,230,118,30.8,1,1,1
 Normal,41,114,72,160,85,22.2,0,0,0
 HTN,65,148,90,212,108,28.5,0,0,0
-Family,56,130,82,195,102,27.0,0,1,1
+Family,56,130,82,195,102,27,0,1,1
 Surgery,78,138,84,200,105,27.5,0,1,1
 No,38,110,70,152,80,20.5,0,0,0
 Smoking,62,142,86,212,112,29.8,1,0,1
 Normal,48,116,74,162,85,22.8,0,0,0
-Stable,79,145,88,215,115,28.0,0,1,1
-Healthy,30,108,68,148,78,20.0,0,0,0
+Stable,79,145,88,215,115,28,0,1,1
+Healthy,30,108,68,148,78,20,0,0,0
 Recent,69,150,90,225,118,29.2,1,1,1
 Normal,51,120,78,170,90,24.5,0,0,0
 "High BP, on meds",70,158,94,232,115,30.1,0,1,1
 "Diabetic, poor control",63,148,90,228,198,33.2,0,0,1
 "No symptoms, active",44,116,74,162,88,23.1,0,0,0
-"Smoker, high cholesterol",66,152,92,238,120,31.0,1,0,1
-"Low risk, normal labs",48,118,76,168,92,24.0,0,0,0
+"Smoker, high cholesterol",66,152,92,238,120,31,1,0,1
+"Low risk, normal labs",48,118,76,168,92,24,0,0,0
 "Family history, started statin",55,135,86,210,105,27.5,0,1,1
 "Post-MI, on clopidogrel",68,142,88,215,110,28.8,0,1,1
 "Healthy, no meds",36,112,72,158,82,21.5,0,0,0
 "Diabetic, A1C 8.2%",64,145,88,220,175,32.5,0,0,1
 "Active, no issues",40,114,72,160,85,22.8,0,0,0
 Leg pain on walking,72,155,92,230,118,30.8,1,1,1
-Normal,45,116,74,162,88,23.0,0,0,0
+Normal,45,116,74,162,88,23,0,0,0
 Stable on meds,78,148,88,218,120,28.8,0,1,1
 Healthy,33,108,68,150,80,20.2,0,0,0
-TIA,71,150,90,222,112,29.0,0,1,1
-Overweight,57,140,86,218,110,33.0,0,0,0
+TIA,71,150,90,222,112,29,0,1,1
+Overweight,57,140,86,218,110,33,0,0,0
 Stable,75,142,84,208,108,27.5,0,1,1
 Normal,44,116,74,165,85,23.5,0,0,0
 Smoking,66,145,88,215,108,29.2,1,0,1
-Fit,50,118,76,168,88,24.0,0,0,0
+Fit,50,118,76,168,88,24,0,0,0
 Stable,58,130,80,192,102,26.5,0,1,1
 No,39,112,72,158,82,21.8,0,0,0
 CKD,74,155,92,235,130,31.5,0,1,1
-Normal,54,122,78,172,90,25.0,0,0,0
+Normal,54,122,78,172,90,25,0,0,0
 AFib,76,142,84,205,108,27.8,0,1,1
-Runner,32,106,66,148,78,19.0,0,0,0
+Runner,32,106,66,148,78,19,0,0,0
 Recovered,69,148,88,218,115,28.8,0,1,1
 Normal,45,116,74,165,88,23.8,0,0,0
 Leg pain,72,155,92,230,118,30.8,1,1,1
 Normal,41,114,72,160,85,22.2,0,0,0
 HTN,65,148,90,212,108,28.5,0,0,0
-Family,56,130,82,195,102,27.0,0,1,1
+Family,56,130,82,195,102,27,0,1,1
 Surgery,78,138,84,200,105,27.5,0,1,1
 No,38,110,70,152,80,20.5,0,0,0
 Smoking,62,142,86,212,112,29.8,1,0,1
 Normal,48,116,74,162,85,22.8,0,0,0
-Stable,79,145,88,215,115,28.0,0,1,1
-Healthy,30,108,68,148,78,20.0,0,0,0
+Stable,79,145,88,215,115,28,0,1,1
+Healthy,30,108,68,148,78,20,0,0,0
 Recent,69,150,90,225,118,29.2,1,1,1
 Normal,52,120,78,170,90,24.5,0,0,0
 "High BP, smoker",68,158,94,232,115,30.1,1,1,1
 "Diabetic, obese",65,148,90,228,198,34.2,0,0,1
 No symptoms,43,116,74,162,88,23.1,0,0,0
-"Smoker, high lipids",67,152,92,238,120,31.0,1,0,1
-Low risk,47,118,76,168,92,24.0,0,0,0
+"Smoker, high lipids",67,152,92,238,120,31,1,0,1
+Low risk,47,118,76,168,92,24,0,0,0
 Family history,54,135,86,210,105,27.5,0,1,1
 Post-MI,69,142,88,215,110,28.8,0,1,1
 Healthy,35,112,72,158,82,21.5,0,0,0
 Diabetic,63,145,88,220,175,32.5,0,0,1
 Active,41,114,72,160,85,22.8,0,0,0
 Leg pain,73,155,92,230,118,30.8,1,1,1
-Normal,46,116,74,162,88,23.0,0,0,0
+Normal,46,116,74,162,88,23,0,0,0
 Stable,79,148,88,218,120,28.8,0,1,1
 Healthy,34,108,68,150,80,20.2,0,0,0
-TIA,72,150,90,222,112,29.0,0,1,1
-Overweight,58,140,86,218,110,33.0,0,0,0
+TIA,72,150,90,222,112,29,0,1,1
+Overweight,58,140,86,218,110,33,0,0,0
 Stable,76,142,84,208,108,27.5,0,1,1
 Normal,45,116,74,165,85,23.5,0,0,0
 Smoking,67,145,88,215,108,29.2,1,0,1
-Fit,51,118,76,168,88,24.0,0,0,0
+Fit,51,118,76,168,88,24,0,0,0
 Stable,59,130,80,192,102,26.5,0,1,1
 No,40,112,72,158,82,21.8,0,0,0
 CKD,75,155,92,235,130,31.5,0,1,1
-Normal,55,122,78,172,90,25.0,0,0,0
+Normal,55,122,78,172,90,25,0,0,0
 AFib,77,142,84,205,104,27.8,0,1,1
-Runner,33,106,66,148,78,19.0,0,0,0
+Runner,33,106,66,148,78,19,0,0,0
 Recovered,70,148,88,218,115,28.8,0,1,1
 Normal,46,116,74,165,88,23.8,0,0,0
 Leg pain,73,155,92,230,118,30.8,1,1,1
 Normal,42,114,72,160,85,22.2,0,0,0
 HTN,66,148,90,212,108,28.5,0,0,0
-Family,57,130,82,195,102,27.0,0,1,1
+Family,57,130,82,195,102,27,0,1,1
 Surgery,79,138,84,200,105,27.5,0,1,1
 No,39,110,70,152,80,20.5,0,0,0
 Smoking,63,142,86,212,112,29.8,1,0,1
 Normal,49,116,74,162,85,22.8,0,0,0
-Stable,80,145,88,215,115,28.0,0,1,1
-Healthy,31,108,68,148,78,20.0,0,0,0
+Stable,80,145,88,215,115,28,0,1,1
+Healthy,31,108,68,148,78,20,0,0,0
 Recent,70,150,90,225,118,29.2,1,1,1
 Normal,53,120,78,170,90,24.5,0,0,0
 "High BP, smoker",69,158,94,232,115,30.1,1,1,1
 "Diabetic, obese",66,148,90,228,198,34.2,0,0,1
 No symptoms,44,116,74,162,88,23.1,0,0,0
-"Smoker, high lipids",68,152,92,238,120,31.0,1,0,1
-Low risk,48,118,76,168,92,24.0,0,0,0
+"Smoker, high lipids",68,152,92,238,120,31,1,0,1
+Low risk,48,118,76,168,92,24,0,0,0
 Family history,56,135,86,210,105,27.5,0,1,1
 Post-MI,70,142,88,215,110,28.8,0,1,1
 Healthy,37,112,72,158,82,21.5,0,0,0
 Diabetic,64,145,88,220,175,32.5,0,0,1
 Active,42,114,72,160,85,22.8,0,0,0
 Leg pain,74,155,92,230,118,30.8,1,1,1
-Normal,47,116,74,162,88,23.0,0,0,0
+Normal,47,116,74,162,88,23,0,0,0
 Stable,80,148,88,218,120,28.8,0,1,1
 Healthy,35,108,68,150,80,20.2,0,0,0
-TIA,73,150,90,222,112,29.0,0,1,1
-Overweight,59,140,86,218,110,33.0,0,0,0
+TIA,73,150,90,222,112,29,0,1,1
+Overweight,59,140,86,218,110,33,0,0,0
 Stable,77,142,84,208,108,27.5,0,1,1
 Normal,46,116,74,165,85,23.5,0,0,0
 Smoking,68,145,88,215,108,29.2,1,0,1
-Fit,52,118,76,168,88,24.0,0,0,0
+Fit,52,118,76,168,88,24,0,0,0
 Stable,60,130,80,192,102,26.5,0,1,1
 No,41,112,72,158,82,21.8,0,0,0
 CKD,76,155,92,235,130,31.5,0,1,1
-Normal,56,122,78,172,90,25.0,0,0,0
+Normal,56,122,78,172,90,25,0,0,0
 AFib,78,142,84,205,108,27.8,0,1,1
-Runner,34,106,66,148,78,19.0,0,0,0
+Runner,34,106,66,148,78,19,0,0,0
 Recovered,71,148,88,218,115,28.8,0,1,1
 Normal,47,116,74,165,88,23.8,0,0,0
 Leg pain,74,155,92,230,118,30.8,1,1,1
 Normal,43,114,72,160,85,22.2,0,0,0
 HTN,67,148,90,212,108,28.5,0,0,0
-Family,58,130,82,195,102,27.0,0,1,1
+Family,58,130,82,195,102,27,0,1,1
 Surgery,80,138,84,200,105,27.5,0,1,1
 No,40,110,70,152,80,20.5,0,0,0
 Smoking,64,142,86,212,112,29.8,1,0,1
 Normal,50,116,74,162,85,22.8,0,0,0
-Stable,81,145,88,215,115,28.0,0,1,1
-Healthy,32,108,68,148,78,20.0,0,0,0
+Stable,81,145,88,215,115,28,0,1,1
+Healthy,32,108,68,148,78,20,0,0,0
 Recent,71,150,90,225,118,29.2,1,1,1
 "Healthy runner, no risks",29,105,65,145,78,18.5,0,0,0
-"Post-CABG, doing well",74,138,82,195,105,27.0,0,1,1
+"Post-CABG, doing well",74,138,82,195,105,27,0,1,1
 "Final row, active, normal labs",44,118,76,170,95,23.8,0,0,0
 "Family history of early MI, but patient active, normal lipids, no symptoms",48,118,76,165,92,23.5,0,1,0
-"Dad had stent at 60, patient runs 5K, BMI 22, no smoking",42,115,74,160,88,22.0,0,1,0
-"Strong family hx, but echo normal, stress test negative",50,120,78,170,90,24.0,0,1,0
+"Dad had stent at 60, patient runs 5K, BMI 22, no smoking",42,115,74,160,88,22,0,1,0
+"Strong family hx, but echo normal, stress test negative",50,120,78,170,90,24,0,1,0
 "Mother had CABG, patient on statin, lipids controlled",55,128,80,175,95,25.5,0,1,0
-"Family hx positive, but patient vegetarian, BMI 21, active",45,116,74,162,85,21.0,0,1,0
-"Brother had MI at 52, patient quit smoking 10y ago, normal BP",58,130,82,180,98,26.0,0,1,0
+"Family hx positive, but patient vegetarian, BMI 21, active",45,116,74,162,85,21,0,1,0
+"Brother had MI at 52, patient quit smoking 10y ago, normal BP",58,130,82,180,98,26,0,1,0
 "Family history, but calcium score 0, no diabetes",47,118,76,168,90,23.8,0,1,0
-"Dad died of heart attack at 55, patient on rosuvastatin, LDL 70",53,125,80,170,92,25.0,0,1,0
+"Dad died of heart attack at 55, patient on rosuvastatin, LDL 70",53,125,80,170,92,25,0,1,0
 "Family hx, but patient marathon runner, no risk factors",40,110,70,155,82,20.5,0,1,0
 "Sister had stroke, patient on aspirin, normal carotid ultrasound",51,122,78,172,88,24.5,0,1,0
-"Family history of CAD, but patientÃÂÃÂs CT angio normal",49,116,74,165,85,23.0,0,1,0
+"Family history of CAD, but patient�s CT angio normal",49,116,74,165,85,23,0,1,0
 "Grandfather had MI, patient young, active, no meds",38,112,72,158,80,21.8,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",52,120,77,170,86,21.8,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",48,113,77,173,82,20.1,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",49,115,71,170,80,21.2,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 115/70",49,126,80,177,95,20.9,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",49,112,74,156,88,20.3,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",51,127,79,158,81,22.7,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",44,121,77,184,93,21.6,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",45,113,71,155,89,22.3,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 115/70",49,111,79,163,95,21.3,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",45,125,71,173,92,20.6,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 115/70",38,116,78,173,80,20.8,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",54,117,72,184,80,22.4,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",44,118,81,156,88,22.5,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",38,125,76,172,84,22.9,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",40,110,72,163,82,23.0,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",51,116,80,158,94,21.7,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",50,116,70,181,83,23.6,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 115/70",52,120,73,162,86,21.2,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",39,119,78,155,91,20.7,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",44,110,70,176,92,23.4,0,1,0
-"Mother had CABG, patient on plant-based diet, LDL 80, stress test normal",46,114,70,173,94,20.7,0,1,0
-"Father had MI at 65, patient very active, normal lipids, no symptoms",54,126,79,161,86,22.0,0,1,0
-"Father had MI at 65, patient very active, normal lipids, no symptoms",42,126,77,166,96,23.9,0,1,0
-"Family history of early CAD, but calcium score 0, no diabetes",42,110,70,168,81,22.1,0,1,0
-"Strong family hx, but patient runs marathons, BMI 21, no smoking",43,113,76,160,96,22.9,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",54,120,77,178,86,22.3,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",50,120,77,170,83,21.1,0,1,0
-"Mother had stroke at 70, patient on statin, carotid clear",41,117,75,151,80,21.7,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",51,118,70,176,89,20.7,0,1,0
-"Brother had CABG, patient quit smoking 12y ago, BP 118/74",55,124,72,161,82,23.9,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",48,116,71,153,93,23.7,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",41,113,76,161,87,20.6,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",56,113,71,157,83,21.7,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",49,113,75,178,97,23.6,0,1,0
-"Strong family hx, but patient vegan, BMI 21, normal echo",49,123,73,163,95,21.8,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",47,114,71,164,92,21.1,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",52,110,78,156,88,23.6,0,1,0
-"Brother had CABG, patient quit smoking 12y ago, BP 118/74",47,117,72,166,87,23.4,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",44,119,76,175,88,24.2,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",47,121,71,150,95,22.0,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",44,112,77,171,82,22.4,0,1,0
-"Family history of CAD, but calcium score 0, stress test negative",54,123,72,150,84,22.7,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",53,116,78,164,94,20.9,0,1,0
-"Brother had CABG, patient quit smoking 12y ago, BP 118/74",52,112,76,166,83,24.1,0,1,0
-"Family hx positive, but patientâs CT angio normal, LDL 78",46,122,73,162,86,21.7,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",41,119,78,170,85,22.3,0,1,0
-"Brother had CABG, patient quit smoking 12y ago, BP 118/74",51,113,79,172,86,24.1,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",52,118,72,156,85,22.5,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",44,110,72,159,91,21.5,0,1,0
-"Mother had stroke at 70, patient on statin, carotid clear",48,113,70,179,96,21.5,0,1,0
-"Brother had CABG, patient quit smoking 12y ago, BP 118/74",46,111,72,166,84,21.6,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",56,111,71,177,84,21.9,0,1,0
-"Father had MI at 68, patient runs 5K, LDL 85, no symptoms",41,114,79,155,83,20.8,0,1,0
-"Sister had MI, patient on rosuvastatin, lipids controlled",56,124,75,173,84,23.0,0,1,0
-"Dad died of heart attack at 72, patient active, no diabetes",50,124,70,158,85,23.3,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",52,118,75,173,84,21.6,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",48,118,75,165,81,20.5,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",39,115,73,146,78,21.1,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",49,116,68,171,87,20.2,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",53,122,70,156,80,23.0,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",46,114,69,148,91,22.8,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",39,111,74,156,85,20.1,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",54,111,69,152,81,21.1,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",47,111,73,173,95,22.7,0,1,0
-"Strong family hx, but patient vegan, BMI 20.8, normal stress test",47,121,71,158,93,21.1,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",45,112,69,159,90,20.5,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",50,108,76,151,86,22.7,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",45,115,70,161,85,22.6,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",42,117,74,170,86,23.2,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",45,119,69,145,93,21.3,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",42,110,75,166,80,21.7,0,1,0
-"Family history of early CAD, but patient’s CT angio clean, HDL 68",52,121,70,145,82,22.0,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",51,114,76,159,92,20.4,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",50,110,74,161,81,23.2,0,1,0
-"Family hx positive, but patient’s echo normal, lipids optimal",44,120,71,157,84,21.0,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",39,117,76,165,83,21.6,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",49,111,77,167,84,23.2,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",50,116,70,151,83,21.8,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",42,108,70,154,89,20.9,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",46,111,68,174,94,20.9,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",44,109,70,161,82,21.0,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",54,109,69,172,82,21.2,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",39,112,77,150,81,20.3,0,1,0
-"Sister had MI at 65, patient on plant-based diet, BMI 22",54,122,73,168,82,22.2,0,1,0
-"Dad died of heart attack at 74, patient active, no diabetes",48,122,68,153,83,22.4,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",41,110,77,147,84,20.6,0,1,0
-"Father had MI at 70, patient runs marathons, LDL 82, no symptoms",45,123,74,162,85,20.5,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",55,114,77,147,84,22.3,0,1,0
-"Strong family hx, but patient vegan, BMI 20.8, normal stress test",53,116,71,172,94,20.8,0,1,0
-"Sister had MI at 65, patient on plant-based diet, BMI 22",49,112,72,171,86,21.0,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",53,123,70,164,78,22.2,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",54,115,71,150,85,22.1,0,1,0
-"Mother had CABG at 68, patient on rosuvastatin, calcium score 0",53,121,76,147,95,20.6,0,1,0
-"Strong family hx, but patient vegan, BMI 20.8, normal stress test",39,113,70,160,86,20.6,0,1,0
-"Brother had stent, patient quit smoking 15y ago, BP 114/72",38,121,72,160,85,23.0,0,1,0
