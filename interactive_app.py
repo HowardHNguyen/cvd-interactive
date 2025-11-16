@@ -9,7 +9,7 @@ import pandas as pd
 def train_and_get_model():
     # st.info("Training model... (first time only, ~3 sec)")
 
-    df = pd.read_csv("data_cvd_perfect.csv")
+    df = pd.read_csv("data_cvd_perfect_300.csv")
 
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.linear_model import LogisticRegression
@@ -135,7 +135,7 @@ with col2:
         'smoke': smoke,
         'family_hx': family_hx
     }])
-    
+
     if glucose >= 126:
         # Artificially boost risk for realism (diabetes = CVD equivalent)
         note += " known diabetes"
