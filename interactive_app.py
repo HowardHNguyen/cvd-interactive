@@ -451,7 +451,7 @@ with st.expander("About This App"):
 st.markdown("---")
 st.markdown(
     "<p style='text-align: center; color: gray;'>"
-    "By Howard Nguyen, PhD, 2025. Developed with TF-IDF + Logistic Regression | No data leakage | AUC ≈ 0.84"
+    "© 2025. By Howard Nguyen, PhD. Developed for interactive demo of AI-driven cardiovascular (CVD) risk prediction"
     "</p>",
     unsafe_allow_html=True
 )
