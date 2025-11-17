@@ -276,6 +276,84 @@ def compute_shap_cached(df):
     shap_values = explainer(Xp)
     return shap_values
 
+# ==================== Text contribution via SHAP surrogate ====================
+# We train a lightweight tree model on the same preprocessor and cache a SHAP explainer.
+# Then we compute per-instance SHAP values and aggregate text vs non-text contributions.
+
+@st.cache_resource
+def get_text_contrib_engine(df):
+    """Fit preprocessor + tree surrogate + SHAP explainer; return engine for per-instance text %."""
+    import numpy as np
+    import shap
+
+    # Fit the same preprocessor on a sample for speed
+    sample = df.sample(min(1000, len(df)), random_state=42).copy()
+    preproc, num_cont, bin_cols, text_col = make_preprocessor()
+
+    X = sample.drop("cvd", axis=1)
+    y = sample["cvd"].astype(int)
+
+    # Small, fast tree as a SHAP surrogate (doesn't change your main models)
+    if HAVE_XGB:
+        surrogate = XGBClassifier(
+            n_estimators=350, max_depth=4, learning_rate=0.07,
+            subsample=0.9, colsample_bytree=0.9, reg_lambda=1.0,
+            objective="binary:logistic", eval_metric="logloss", random_state=42
+        )
+    else:
+        surrogate = GradientBoostingClassifier(
+            n_estimators=350, max_depth=3, learning_rate=0.07, random_state=42
+        )
+
+    Xp = preproc.fit_transform(X)
+    surrogate.fit(Xp, y)
+
+    # Background for SHAP (subset to keep it fast)
+    bgn = min(200, Xp.shape[0])
+    background = Xp[:bgn]
+
+    explainer = shap.Explainer(surrogate, background)
+
+    # Column partitions in the transformed matrix
+    # Order = [num_cont (len N), bin_cols (len B), text (rest)]
+    n_num = len(num_cont)
+    n_bin = len(bin_cols)
+    text_start = n_num + n_bin
+
+    meta = {
+        "preproc": preproc,
+        "explainer": explainer,
+        "num_cont": num_cont,
+        "bin_cols": bin_cols,
+        "text_start": text_start
+    }
+    return meta
+
+
+def compute_text_contribution_percent(engine, row_df):
+    """
+    Return (text_pct, abs_text, abs_total).
+    text_pct is 0..100 showing share of absolute SHAP coming from text features.
+    """
+    import numpy as np
+
+    preproc = engine["preproc"]
+    explainer = engine["explainer"]
+    text_start = engine["text_start"]
+
+    # Transform the single row
+    Xp_row = preproc.transform(row_df)
+
+    # SHAP for this single instance
+    shap_values = explainer(Xp_row)  # works with tree surrogate
+    vals = np.abs(shap_values.values[0])
+
+    # Split into non-text vs text contributions
+    abs_text = float(vals[text_start:].sum())
+    abs_total = float(vals.sum()) if float(vals.sum()) > 0 else 1e-9
+    text_pct = 100.0 * abs_text / abs_total
+    return text_pct, abs_text, abs_total
+
 # ==================== APP ====================
 df = load_data()
 st.sidebar.success(f"Dataset loaded • rows: {len(df)} • prevalence: {df['cvd'].mean():.2f}")
@@ -390,6 +468,47 @@ if run_shap and SHAP_OK:
         st.info(f"SHAP not available in this environment: {e}")
 elif not SHAP_OK:
     st.info("SHAP not installed; skip visual explanation.")
+
+# ==================== Text Contribution (Clinical Note vs Structured) ====================
+st.subheader("Text Contribution (Clinical Note → Risk)")
+st.caption("Estimates what percent of this prediction is driven by the clinical note vs. structured inputs (age, BP, labs, BMI, smoking, family history).")
+
+run_text_contrib = st.checkbox("Compute text contribution (slower)", value=False)
+if run_text_contrib:
+    try:
+        engine = get_text_contrib_engine(df)
+        text_pct, abs_text, abs_total = compute_text_contribution_percent(engine, row)
+        other_pct = 100.0 - text_pct
+
+        # Display numbers
+        st.write(f"**Clinical Note Contribution:** {text_pct:.1f}% of the model signal")
+        st.write(f"Structured data contribution: {other_pct:.1f}%")
+
+        # Tiny bar chart (no custom colors to keep requirements simple)
+        try:
+            import matplotlib.pyplot as plt
+            fig, ax = plt.subplots()
+            ax.bar(["Clinical Note", "Structured"], [text_pct, other_pct])
+            ax.set_ylim(0, 100)
+            ax.set_ylabel("% of total contribution")
+            ax.set_title("Contribution Breakdown")
+            st.pyplot(fig)
+        except Exception:
+            pass
+
+        # Friendly interpretation
+        if text_pct < 10:
+            st.info("The note plays a small role here (likely a neutral/healthy note).")
+        elif text_pct < 25:
+            st.info("The note carries a meaningful but not dominant share of the prediction.")
+        elif text_pct < 40:
+            st.info("The note is a strong driver of risk for this input.")
+        else:
+            st.info("The note heavily influences the prediction (symptoms/terms carry strong signals).")
+
+    except Exception as e:
+        st.warning(f"Could not compute text contribution: {e}")
+        st.caption("Tip: Ensure `shap` and tree libraries are available in requirements, and try again.")
 
 # Comparison: simple “Traditional-like” vs ML
 st.subheader("Comparison: Traditional-like Score vs ML")
