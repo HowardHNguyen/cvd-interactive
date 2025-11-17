@@ -444,3 +444,14 @@ with st.expander("About This App"):
 
 **Notes:** Decision support only; requires local validation and governance before clinical deployment.
         """)
+
+# ------------------------------------------------------------------
+# Footer
+# ------------------------------------------------------------------
+st.markdown("---")
+st.markdown(
+    "<p style='text-align: center; color: gray;'>"
+    "By Howard Nguyen, PhD, 2025. Developed with TF-IDF + Logistic Regression | No data leakage | AUC ≈ 0.84"
+    "</p>",
+    unsafe_allow_html=True
+)
