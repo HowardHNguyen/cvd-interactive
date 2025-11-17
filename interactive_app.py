@@ -445,13 +445,97 @@ with st.expander("About This App"):
 **Notes:** Decision support only; requires local validation and governance before clinical deployment.
         """)
 
-# ------------------------------------------------------------------
+# ==================================================================
 # Footer
-# ------------------------------------------------------------------
+# ==================================================================
 st.markdown("---")
 st.markdown(
     "<p style='text-align: center; color: gray;'>"
-    "© 2025. By Howard Nguyen, PhD. Developed for interactive demo of AI-driven cardiovascular (CVD) risk prediction"
+    "© 2025. By Howard Nguyen, PhD. Developed for interactive AI-driven cardiovascular (CVD) risk prediction."
     "</p>",
     unsafe_allow_html=True
 )
+
+# ==================================================================
+# Short Disclaimer (always visible)
+# ==================================================================
+st.markdown(
+    "<p style='text-align: center; color: gray; font-size: 12px;'>"
+    "This application is for demonstration and educational purposes only and does not constitute medical advice, "
+    "diagnosis, or treatment. Predictions are estimates from machine learning models and should never replace "
+    "professional clinical judgment."
+    "</p>",
+    unsafe_allow_html=True
+)
+
+# ==================================================================
+# Expandable Full Legal Disclaimer
+# ==================================================================
+with st.expander("Full Legal Disclaimer"):
+    st.markdown("""
+**Full Disclaimer:**  
+This tool is designed solely for educational, demonstration, and research exploration. It is **not** intended
+to diagnose, treat, cure, or prevent any disease. The predictive values displayed are model-generated
+probabilistic estimates based on limited data and may not accurately represent real clinical outcomes.
+
+This application:
+- is **not FDA-cleared or approved**,  
+- is **not** a medical device,  
+- is **not** intended for direct patient care,  
+- must **not** be used as the basis for treatment decisions,  
+- is **not** a substitute for a licensed healthcare professional.
+
+Users assume full responsibility for interpreting outputs and acknowledge that the developer is not liable
+for decisions made based on these predictions.
+    """)
+
+# ==================================================================
+# HIPAA / Privacy Notice
+# ==================================================================
+with st.expander("HIPAA & Privacy Notice"):
+    st.markdown("""
+**HIPAA & Privacy:**  
+This application does *not* store, transmit, or retain any Protected Health Information (PHI).  
+All inputs are processed locally within the session memory in Streamlit Cloud.
+
+No patient identifiers are collected (e.g., name, DOB, MRN, address, phone).  
+All data used for the underlying models consist of **synthetic** or properly de-identified datasets.
+
+If used within a clinical organization, users must ensure compliance with applicable data governance,
+privacy standards, and institutional policies.
+    """)
+
+# ==================================================================
+# Model Version & Metadata
+# ==================================================================
+with st.expander("Model Information & Version Details"):
+    st.markdown(f"""
+**Model Version:** 1.0  
+**Last Updated:** Feb 2025  
+**Model Types:** Logistic Regression (Calibrated), GBM/XGBoost (Calibrated), Stacking Ensemble  
+**Calibration Method:** Platt sigmoid calibration (5-fold Stratified CV)  
+**Feature Inputs:** age, BP, cholesterol, glucose, BMI, smoking status, family history, clinical note (TF-IDF)  
+**Family History Adjustment:** Epidemiology-aligned odds multiplier (~2.5×) applied post-calibration  
+**Risk Interpretation:** Probability of a 10-year CVD event  
+**SHAP Explainability:** Tree-based global + local interpretability  
+**Counterfactuals:** Single-variable “What if?” simulations  
+**Traditional Comparator:** Linear baseline mimicking legacy risk scores  
+""")
+
+# ==================================================================
+# Contact Section
+# ==================================================================
+with st.expander("Contact the Developer"):
+    st.markdown("""
+**Developer:** Howard Nguyen, PhD  
+**Website:** https://cvd-predictor.streamlit.app/  
+**LinkedIn:** https://www.linkedin.com/in/howardhnguyen/ 
+**Email:** info@howardnguyen.com  
+
+Feel free to reach out regarding:
+- Collaboration  
+- Research inquiries  
+- Healthcare AI projects  
+- Optimization or deployment help  
+- Model audits, improvements, or validation  
+    """)
